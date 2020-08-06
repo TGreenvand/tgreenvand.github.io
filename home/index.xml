@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Homes on Website of Jane Doe</title>
+    <link>https://tgreenvand.github.io/home/</link>
+    <description>Recent content in Homes on Website of Jane Doe</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 06 Aug 2020 21:14:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://tgreenvand.github.io/home/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Leetcode</title>
+      <link>https://tgreenvand.github.io/home/leetcode/</link>
+      <pubDate>Thu, 06 Aug 2020 21:14:00 +0800</pubDate>
+      
+      <guid>https://tgreenvand.github.io/home/leetcode/</guid>
+      <description>leetcode 刷题记录 dfs深度优先搜索 1. 矩阵中的路径 请设计一个函数，用来判断在一个矩阵中是否存在一条包含某字符串所有字符的路径。路径可以从矩阵中的任意一格开始，每一步可以在矩阵中向左、右、上、下移动一格。如果一条路径经过了矩阵的某一格，那么该路径不能再次进入该格子。例如，在下面的3×4的矩阵中包含一条字符串“bfce”的路径（路径中的字母用加粗标出）
+[[&amp;ldquo;a&amp;rdquo;,&amp;quot;b&amp;rdquo;,&amp;ldquo;c&amp;rdquo;,&amp;ldquo;e&amp;rdquo;]
+[&amp;ldquo;s&amp;rdquo;,&amp;quot;f&amp;rdquo;,&amp;quot;c&amp;rdquo;,&amp;ldquo;s&amp;rdquo;]
+[&amp;ldquo;a&amp;rdquo;,&amp;ldquo;d&amp;rdquo;,&amp;ldquo;e&amp;rdquo;,&amp;quot;e&amp;quot;]]
+代码如下：</description>
+    </item>
+    
+  </channel>
+</rss>

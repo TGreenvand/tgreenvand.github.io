@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light"><head>
+    <title>  | Leetcode </title>
+    <meta charset="utf-8"><meta name="generator" content="Hugo 0.74.3" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="description" content="">
+    
+    <link rel="stylesheet" href="https://tgreenvand.github.io/css/style.min.bc86fb941514f4372c4dc20a2943517ff18e69b0407b04770c951df062b8318c.css" integrity="sha256-vIb7lBUU9DcsTcIKKUNRf/GOabBAewR3DJUd8GK4MYw=" crossorigin="anonymous" type="text/css"><link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    
+    <link rel="shortcut icon" href="https://tgreenvand.github.io/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://tgreenvand.github.io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://tgreenvand.github.io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://tgreenvand.github.io/favicon-16x16.png">
+    <link rel="canonical" href="https://tgreenvand.github.io/home/leetcode/">
+    
+    
+    <script type="text/javascript" src="https://tgreenvand.github.io/js/anatole-header.min.5c3d657bb0d1adceaec49fbda36f780745843987e1506de549da8939420dbf52.js" integrity="sha256-XD1le7DRrc6uxJ&#43;9o294B0WEOYfhUG3lSdqJOUINv1I=" crossorigin="anonymous"></script>
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Leetcode"/>
+<meta name="twitter:description" content="leetcode 刷题记录 dfs深度优先搜索 1. 矩阵中的路径 请设计一个函数，用来判断在一个矩阵中是否存在一条包含某字符串所有字符的路径。路径可以从矩阵中的任意一格开始，每一步可以在矩阵中向左、右、上、下移动一格。如果一条路径经过了矩阵的某一格，那么该路径不能再次进入该格子。例如，在下面的3×4的矩阵中包含一条字符串“bfce”的路径（路径中的字母用加粗标出）
+[[&ldquo;a&rdquo;,&quot;b&rdquo;,&ldquo;c&rdquo;,&ldquo;e&rdquo;]
+[&ldquo;s&rdquo;,&quot;f&rdquo;,&quot;c&rdquo;,&ldquo;s&rdquo;]
+[&ldquo;a&rdquo;,&ldquo;d&rdquo;,&ldquo;e&rdquo;,&quot;e&quot;]]
+代码如下："/>
+
+</head><body><div class="sidebar animated fadeInDown">
+    <div class="logo-title">
+      <div class="title">
+        <img src="https://tgreenvand.github.io/" alt="profile picture">
+        <h3 title=""><a href="/"></a></h3>
+        <div class="description">
+          <p></p>
+        </div>
+      </div>
+    </div>
+    <ul class="social-links">
+        
+    </ul>
+    <div class="footer">
+        <div class="by_farbox">&copy;  2020 </div>
+      </div>
+    </div>
+</div><div class="main">
+            <div class="page-top animated fadeInDown">
+    <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false" >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    <ul class="nav" id="navMenu">
+        
+        
+        
+        <li class="theme-switch-item">
+        <a class="theme-switch" title="Switch Theme">
+            <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+        </a>
+        </li>
+    </ul>
+</div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+<div class="post animated fadeInDown">
+    <div class="post-content">
+
+      <div class="post-title">
+        <h3>Leetcode
+        </h3>
+        
+        </div>
+
+    <h1 id="leetcode-刷题记录">leetcode 刷题记录</h1>
+<h2 id="dfs深度优先搜索">dfs深度优先搜索</h2>
+<p><strong>1. 矩阵中的路径</strong>
+请设计一个函数，用来判断在一个矩阵中是否<strong>存在一条包含某字符串所有字符</strong>的路径。路径可以从矩阵中的任意一格开始，每一步可以在矩阵中向左、右、上、下移动一格。如果一条路径经过了矩阵的某一格，那么该路径不能再次进入该格子。例如，在下面的3×4的矩阵中包含一条字符串“bfce”的路径（路径中的字母用加粗标出）</p>
+<p>[[&ldquo;a&rdquo;,&quot;<strong>b</strong>&rdquo;,&ldquo;c&rdquo;,&ldquo;e&rdquo;]</p>
+<p>[&ldquo;s&rdquo;,&quot;<strong>f</strong>&rdquo;,&quot;<strong>c</strong>&rdquo;,&ldquo;s&rdquo;]</p>
+<p>[&ldquo;a&rdquo;,&ldquo;d&rdquo;,&ldquo;e&rdquo;,&quot;<strong>e</strong>&quot;]]</p>
+<p>代码如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span>(object):
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">exist</span>(self, board, word):
+        <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">        :type board: List[List[str]]
+</span><span style="color:#e6db74">        :type word: str
+</span><span style="color:#e6db74">        :rtype: bool
+</span><span style="color:#e6db74">        &#34;&#34;&#34;</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> board <span style="color:#f92672">or</span> <span style="color:#f92672">not</span> board[<span style="color:#ae81ff">0</span>]:
+            <span style="color:#66d9ef">return</span> False
+        m <span style="color:#f92672">=</span> len(board)
+        n <span style="color:#f92672">=</span> len(board[<span style="color:#ae81ff">0</span>])
+        marked <span style="color:#f92672">=</span> [[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">*</span>n <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(m)]
+        direction <span style="color:#f92672">=</span> [(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>),(<span style="color:#ae81ff">0</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>),(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>),(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>)]
+        
+        <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">dfs</span>(i,j,board,marked,word):
+            <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> word:<span style="color:#66d9ef">return</span> True
+            <span style="color:#66d9ef">for</span> d <span style="color:#f92672">in</span> direction:
+                tmpx, tmpy <span style="color:#f92672">=</span> i<span style="color:#f92672">+</span>d[<span style="color:#ae81ff">0</span>], j<span style="color:#f92672">+</span>d[<span style="color:#ae81ff">1</span>]
+                <span style="color:#66d9ef">if</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">&lt;=</span>tmpx<span style="color:#f92672">&lt;</span>m <span style="color:#f92672">and</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">&lt;=</span>tmpy<span style="color:#f92672">&lt;</span>n <span style="color:#f92672">and</span> <span style="color:#f92672">not</span> marked[tmpx][tmpy] <span style="color:#f92672">and</span> board[tmpx][tmpy]<span style="color:#f92672">==</span>word[<span style="color:#ae81ff">0</span>]:
+                    marked[tmpx][tmpy] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+                    <span style="color:#66d9ef">if</span> dfs(tmpx,tmpy,board,marked,word[<span style="color:#ae81ff">1</span>:]):
+                        <span style="color:#66d9ef">return</span> True
+                    <span style="color:#66d9ef">else</span>:
+                        marked[tmpx][tmpy] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+            <span style="color:#66d9ef">return</span> False
+        
+        <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(m):
+            <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(n):
+                <span style="color:#66d9ef">if</span> board[i][j] <span style="color:#f92672">==</span> word[<span style="color:#ae81ff">0</span>]:
+                    marked[i][j] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+                    <span style="color:#66d9ef">if</span> dfs(i,j,board,marked,word[<span style="color:#ae81ff">1</span>:]):
+                        <span style="color:#66d9ef">return</span> True
+                    <span style="color:#66d9ef">else</span>:
+                        marked[i][j] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+        <span style="color:#66d9ef">return</span> False
+</code></pre></div><p>代码中有几个矩阵搜索中的关键点：</p>
+<ol>
+<li>使用方向数组：</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">direction <span style="color:#f92672">=</span> [(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>),(<span style="color:#ae81ff">0</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>),(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>),(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>)]
+</code></pre></div><ol start="2">
+<li>使用marked矩阵进行搜索记录:</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">	marked <span style="color:#f92672">=</span> [[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">*</span>n <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(m)]
+</code></pre></div><ol start="3">
+<li>注意每次dfs搜索结束后如果不符合题中条件,要还原marked的值:</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">    <span style="color:#66d9ef">if</span> dfs(tmpx,tmpy,board,marked,word[<span style="color:#ae81ff">1</span>:]):
+        <span style="color:#66d9ef">return</span> True
+    <span style="color:#66d9ef">else</span>:
+        marked[tmpx][tmpy] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</code></pre></div>
+    </div>
+    <div class="post-footer">
+      <div class="info">
+        
+        
+      </div>
+    </div>
+
+    
+</div>
+
+
+                </div>
+            </div>
+        </div>
+</body>
+
+
+
+<script type="text/javascript" src="https://tgreenvand.github.io/js/jquery.min.86b1e8f819ee2d9099a783e50b49dff24282545fc40773861f9126b921532e4c.js" integrity="sha256-hrHo&#43;BnuLZCZp4PlC0nf8kKCVF/EB3OGH5EmuSFTLkw=" crossorigin="anonymous"></script>
+
+
+
+
+<script type="text/javascript" src="https://tgreenvand.github.io/js/bundle.min.0f9c74cb78f13d1f15f33daff4037c70354f98acfbb97a6f61708966675c3cae.js" integrity="sha256-D5x0y3jxPR8V8z2v9AN8cDVPmKz7uXpvYXCJZmdcPK4=" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="https://tgreenvand.github.io/js/medium-zoom.min.92f21c856129f84aeb719459b3e6ac621a3032fd7b180a18c04e1d12083f8aba.js" integrity="sha256-kvIchWEp&#43;ErrcZRZs&#43;asYhowMv17GAoYwE4dEgg/iro=" crossorigin="anonymous"></script></html></body>
+
+</html>
