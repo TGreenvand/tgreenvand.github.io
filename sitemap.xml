@@ -3,17 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://tgreenvand.github.io/about/about/</loc>
+    <lastmod>2020-11-29T22:01:21+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tgreenvand.github.io/about/</loc>
+    <lastmod>2020-11-29T22:01:21+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tgreenvand.github.io/</loc>
+    <lastmod>2020-11-29T22:01:21+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://tgreenvand.github.io/home/</loc>
     <lastmod>2020-08-06T21:14:00+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://tgreenvand.github.io/home/leetcode/</loc>
-    <lastmod>2020-08-06T21:14:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://tgreenvand.github.io/</loc>
     <lastmod>2020-08-06T21:14:00+08:00</lastmod>
   </url>
   
