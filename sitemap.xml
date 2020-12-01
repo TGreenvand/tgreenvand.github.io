@@ -3,17 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://tgreenvand.github.io/home/</loc>
+    <lastmod>2020-12-01T15:15:50+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tgreenvand.github.io/</loc>
+    <lastmod>2020-12-01T15:15:50+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tgreenvand.github.io/home/x/</loc>
+    <lastmod>2020-12-01T15:15:50+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://tgreenvand.github.io/about/about/</loc>
     <lastmod>2020-12-01T15:05:11+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://tgreenvand.github.io/about/</loc>
-    <lastmod>2020-12-01T15:05:11+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://tgreenvand.github.io/</loc>
     <lastmod>2020-12-01T15:05:11+08:00</lastmod>
   </url>
   
