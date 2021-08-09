@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>HUO JINQI</title>
-    <link>https://tgreenvand.github.io/</link>
-    <description>Recent content on HUO JINQI</description>
+    <title>计算机基础s on HUO JINQI</title>
+    <link>https://tgreenvand.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/</link>
+    <description>Recent content in 计算机基础s on HUO JINQI</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 09 Aug 2021 20:40:21 +0100</lastBuildDate>
     
-	<atom:link href="https://tgreenvand.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://tgreenvand.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,15 +18,6 @@
       
       <guid>https://tgreenvand.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%98%AF%E5%A6%82%E4%BD%95%E5%AD%98%E5%82%A8%E7%9A%84/</guid>
       <description>xxx xxx xxx</description>
-    </item>
-    
-    <item>
-      <title>First</title>
-      <link>https://tgreenvand.github.io/post/first/</link>
-      <pubDate>Mon, 09 Aug 2021 18:45:09 +0100</pubDate>
-      
-      <guid>https://tgreenvand.github.io/post/first/</guid>
-      <description></description>
     </item>
     
   </channel>
