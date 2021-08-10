@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>字符编码 - HUO JINQI</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+		<meta property="og:title" content="字符编码" />
+<meta property="og:description" content="字符编码指的是对每一个独一无二的字符赋予一个数字，然后将这个数字转换成计算机二进制补码的方式存储，这样计算机就可以识别每个字符了。
+目前耳熟能详的对字符进行编码的方法有ASCII、Unicode和UTF-8，本文主要介绍这三种编码方式的区别以及演化
+字符编码的演化 总的来说，ASCII（发音为&quot;askey&rdquo;）编码方式用7位二进制数编码了128个字符，最高位统一规定为0. ASCII编码主要面对的是大小写英文字母，数字0-9，各种标点符号以及一些特殊字符。
+由于世界上的字符远不止128个，各个国家的语言也会有其特殊的字符存在，所以需要一种统一的编码方式来对世界上可能存在的所有字符进行编码，于是就诞生了Unicode统一码，Unicode采用定长的方式对每个字符进行编码
+Unicode暴露的问题是，如果对每个字符都用定长编码，对于一些只需要单字节存储的字符来说，存储的成本较高，于是出现了多种Unicode编码的实现方式，UTF-8就是其中的一种。
+UTF-8以字节为单位对Unicode进行编码，实现了对于长字符编码长度较长，短字符编码长度较短的效果" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://tgreenvand.github.io/post/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%98%AF%E5%A6%82%E4%BD%95%E5%AD%98%E5%82%A8%E7%9A%84/" />
+<meta property="article:published_time" content="2021-08-09T20:40:21+01:00" />
+<meta property="article:modified_time" content="2021-08-09T20:40:21+01:00" />
+
+		<meta itemprop="name" content="字符编码">
+<meta itemprop="description" content="字符编码指的是对每一个独一无二的字符赋予一个数字，然后将这个数字转换成计算机二进制补码的方式存储，这样计算机就可以识别每个字符了。
+目前耳熟能详的对字符进行编码的方法有ASCII、Unicode和UTF-8，本文主要介绍这三种编码方式的区别以及演化
+字符编码的演化 总的来说，ASCII（发音为&quot;askey&rdquo;）编码方式用7位二进制数编码了128个字符，最高位统一规定为0. ASCII编码主要面对的是大小写英文字母，数字0-9，各种标点符号以及一些特殊字符。
+由于世界上的字符远不止128个，各个国家的语言也会有其特殊的字符存在，所以需要一种统一的编码方式来对世界上可能存在的所有字符进行编码，于是就诞生了Unicode统一码，Unicode采用定长的方式对每个字符进行编码
+Unicode暴露的问题是，如果对每个字符都用定长编码，对于一些只需要单字节存储的字符来说，存储的成本较高，于是出现了多种Unicode编码的实现方式，UTF-8就是其中的一种。
+UTF-8以字节为单位对Unicode进行编码，实现了对于长字符编码长度较长，短字符编码长度较短的效果">
+<meta itemprop="datePublished" content="2021-08-09T20:40:21+01:00" />
+<meta itemprop="dateModified" content="2021-08-09T20:40:21+01:00" />
+<meta itemprop="wordCount" content="8">
+
+
+
+<meta itemprop="keywords" content="基础知识," />
+
+		<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="字符编码"/>
+<meta name="twitter:description" content="字符编码指的是对每一个独一无二的字符赋予一个数字，然后将这个数字转换成计算机二进制补码的方式存储，这样计算机就可以识别每个字符了。
+目前耳熟能详的对字符进行编码的方法有ASCII、Unicode和UTF-8，本文主要介绍这三种编码方式的区别以及演化
+字符编码的演化 总的来说，ASCII（发音为&quot;askey&rdquo;）编码方式用7位二进制数编码了128个字符，最高位统一规定为0. ASCII编码主要面对的是大小写英文字母，数字0-9，各种标点符号以及一些特殊字符。
+由于世界上的字符远不止128个，各个国家的语言也会有其特殊的字符存在，所以需要一种统一的编码方式来对世界上可能存在的所有字符进行编码，于是就诞生了Unicode统一码，Unicode采用定长的方式对每个字符进行编码
+Unicode暴露的问题是，如果对每个字符都用定长编码，对于一些只需要单字节存储的字符来说，存储的成本较高，于是出现了多种Unicode编码的实现方式，UTF-8就是其中的一种。
+UTF-8以字节为单位对Unicode进行编码，实现了对于长字符编码长度较长，短字符编码长度较短的效果"/>
+
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="HUO JINQI" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">HUO JINQI</div>
+					
+				</div>
+		</a>
+	</div>
+		<div class="divider"></div>
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">字符编码</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-08-09T20:40:21&#43;01:00">2021-08-09</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" rel="category">计算机基础知识</a>
+	</span>
+</div></div>
+		</header>
+<div class="post__toc toc">
+	<div class="toc__title">Page content</div>
+	<div class="toc__menu">
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#字符编码的演化">字符编码的演化</a></li>
+  </ul>
+</nav>
+	</div>
+</div><div class="content post__content clearfix">
+			<p>字符编码指的是对每一个独一无二的字符赋予一个数字，然后将这个数字转换成计算机二进制补码的方式存储，这样计算机就可以识别每个字符了。</p>
+<p>目前耳熟能详的对字符进行编码的方法有ASCII、Unicode和UTF-8，本文主要介绍这三种编码方式的区别以及演化</p>
+<h2 id="字符编码的演化">字符编码的演化</h2>
+<p>总的来说，ASCII（发音为&quot;askey&rdquo;）编码方式用7位二进制数编码了128个字符，最高位统一规定为0. ASCII编码主要面对的是大小写英文字母，数字0-9，各种标点符号以及一些特殊字符。</p>
+<p>由于世界上的字符远不止128个，各个国家的语言也会有其特殊的字符存在，所以需要一种统一的编码方式来对世界上可能存在的所有字符进行编码，于是就诞生了Unicode统一码，Unicode采用定长的方式对每个字符进行编码</p>
+<p>Unicode暴露的问题是，如果对每个字符都用定长编码，对于一些只需要单字节存储的字符来说，存储的成本较高，于是出现了多种Unicode编码的实现方式，UTF-8就是其中的一种。</p>
+<p>UTF-8以字节为单位对Unicode进行编码，实现了对于长字符编码长度较长，短字符编码长度较短的效果</p>
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" rel="tag">基础知识</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<p class="authorbox__warning">
+		<strong>WARNING:</strong> Authorbox is activated, but [Author] parameters are not specified.
+	</p>
+</div>
+
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2021 params.copyright.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>
