@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>对数位dp的理解 - J.Q.HUO</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+		<meta property="og:title" content="对数位dp的理解" />
+<meta property="og:description" content="我开始做数位dp相关习题的最主要原因就是被7.30阿里笔试第一题虐到了&hellip;当时答完题直接自闭，第一题都没做出来，然后上牛客看一个的解法说是数位dp，之后一查居然是算法竞赛才会研究的专题orz&hellip;不管怎么说最近的一段研究也算是让我摆脱了“大区间内满足条件的数字个数查找”类型的题目无从下手的尴尬处境，接下来就谈谈我对这类题目以及数位dp的看法
+什么是数位dp 简单来说是对给定的一个相对大的数n，将n的从高到低位用一个数组保存，然后通过分析n的各个数位之间的依赖关系（通常是题目的约束条件，比如相邻两个数字之差啥的）进行动态规划的一个过程（这里用记忆化dfs实现比较好理解）
+数位dp可以用来解决大区间内满足条件的数的个数查找类问题，让我们通过以下题目来对数位dp进行一个感性的认知：
+ leetcode 233 数字1的个数
+给定一个整数n，计算所有小于等于n的非负整数中数字1出现的个数，其中1&lt;=n&lt;=10^8
+  leetcode 1067 范围内的数字计数
+给定一个在 0到 9 之间的整数 d，和两个正整数 low 和 high 分别作为上下界。返回 d在 low 和 high 之间的整数中出现的次数，包括边界 low 和 high
+  leetcode 600 不含连续1的非负整数个数
+给定一个正整数 n，找出小于或等于 n 的非负整数中，其二进制表示不包含 连续的1的个数。
+  leetcode 902 最大为N的数字组合
+我们有一组排序的数字 D，它是 {&#39;1&#39;,&#39;2&#39;,&#39;3&#39;,&#39;4&#39;,&#39;5&#39;,&#39;6&#39;,&#39;7&#39;,&#39;8&#39;,&#39;9&#39;} 的非空子集。（请注意，&lsquo;0&rsquo; 不包括在内。）
+现在，我们用这些数字进行组合写数字，想用多少次就用多少次。例如 D = {&#39;1&#39;,&#39;3&#39;,&#39;5&#39;}，我们可以写出像 &#39;13&#39;, &#39;551&#39;, &#39;1351315&#39; 这样的数字。
+返回可以用 D 中的数字写出的小于或等于 N 的正整数的数目
+ 代码模版以及分析过程 我会结合代码模版来对数位dp问题进行一轮分析
+python代码模版如下（以leetcode 233为例）：
+class Solution: def __init__(self): # 初始化n的上界数组a # 初始化记忆化数组dp，通常dp的大小需要通过分析题目来得出 self." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://tgreenvand.github.io/post/%E5%AF%B9%E6%95%B0%E4%BD%8Ddp%E7%9A%84%E7%90%86%E8%A7%A3/" />
+<meta property="article:published_time" content="2021-08-14T22:48:50+01:00" />
+<meta property="article:modified_time" content="2021-08-14T22:48:50+01:00" />
+
+		<meta itemprop="name" content="对数位dp的理解">
+<meta itemprop="description" content="我开始做数位dp相关习题的最主要原因就是被7.30阿里笔试第一题虐到了&hellip;当时答完题直接自闭，第一题都没做出来，然后上牛客看一个的解法说是数位dp，之后一查居然是算法竞赛才会研究的专题orz&hellip;不管怎么说最近的一段研究也算是让我摆脱了“大区间内满足条件的数字个数查找”类型的题目无从下手的尴尬处境，接下来就谈谈我对这类题目以及数位dp的看法
+什么是数位dp 简单来说是对给定的一个相对大的数n，将n的从高到低位用一个数组保存，然后通过分析n的各个数位之间的依赖关系（通常是题目的约束条件，比如相邻两个数字之差啥的）进行动态规划的一个过程（这里用记忆化dfs实现比较好理解）
+数位dp可以用来解决大区间内满足条件的数的个数查找类问题，让我们通过以下题目来对数位dp进行一个感性的认知：
+ leetcode 233 数字1的个数
+给定一个整数n，计算所有小于等于n的非负整数中数字1出现的个数，其中1&lt;=n&lt;=10^8
+  leetcode 1067 范围内的数字计数
+给定一个在 0到 9 之间的整数 d，和两个正整数 low 和 high 分别作为上下界。返回 d在 low 和 high 之间的整数中出现的次数，包括边界 low 和 high
+  leetcode 600 不含连续1的非负整数个数
+给定一个正整数 n，找出小于或等于 n 的非负整数中，其二进制表示不包含 连续的1的个数。
+  leetcode 902 最大为N的数字组合
+我们有一组排序的数字 D，它是 {&#39;1&#39;,&#39;2&#39;,&#39;3&#39;,&#39;4&#39;,&#39;5&#39;,&#39;6&#39;,&#39;7&#39;,&#39;8&#39;,&#39;9&#39;} 的非空子集。（请注意，&lsquo;0&rsquo; 不包括在内。）
+现在，我们用这些数字进行组合写数字，想用多少次就用多少次。例如 D = {&#39;1&#39;,&#39;3&#39;,&#39;5&#39;}，我们可以写出像 &#39;13&#39;, &#39;551&#39;, &#39;1351315&#39; 这样的数字。
+返回可以用 D 中的数字写出的小于或等于 N 的正整数的数目
+ 代码模版以及分析过程 我会结合代码模版来对数位dp问题进行一轮分析
+python代码模版如下（以leetcode 233为例）：
+class Solution: def __init__(self): # 初始化n的上界数组a # 初始化记忆化数组dp，通常dp的大小需要通过分析题目来得出 self.">
+<meta itemprop="datePublished" content="2021-08-14T22:48:50+01:00" />
+<meta itemprop="dateModified" content="2021-08-14T22:48:50+01:00" />
+<meta itemprop="wordCount" content="183">
+
+
+
+<meta itemprop="keywords" content="动态规划,记忆化dfs," />
+
+		<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="对数位dp的理解"/>
+<meta name="twitter:description" content="我开始做数位dp相关习题的最主要原因就是被7.30阿里笔试第一题虐到了&hellip;当时答完题直接自闭，第一题都没做出来，然后上牛客看一个的解法说是数位dp，之后一查居然是算法竞赛才会研究的专题orz&hellip;不管怎么说最近的一段研究也算是让我摆脱了“大区间内满足条件的数字个数查找”类型的题目无从下手的尴尬处境，接下来就谈谈我对这类题目以及数位dp的看法
+什么是数位dp 简单来说是对给定的一个相对大的数n，将n的从高到低位用一个数组保存，然后通过分析n的各个数位之间的依赖关系（通常是题目的约束条件，比如相邻两个数字之差啥的）进行动态规划的一个过程（这里用记忆化dfs实现比较好理解）
+数位dp可以用来解决大区间内满足条件的数的个数查找类问题，让我们通过以下题目来对数位dp进行一个感性的认知：
+ leetcode 233 数字1的个数
+给定一个整数n，计算所有小于等于n的非负整数中数字1出现的个数，其中1&lt;=n&lt;=10^8
+  leetcode 1067 范围内的数字计数
+给定一个在 0到 9 之间的整数 d，和两个正整数 low 和 high 分别作为上下界。返回 d在 low 和 high 之间的整数中出现的次数，包括边界 low 和 high
+  leetcode 600 不含连续1的非负整数个数
+给定一个正整数 n，找出小于或等于 n 的非负整数中，其二进制表示不包含 连续的1的个数。
+  leetcode 902 最大为N的数字组合
+我们有一组排序的数字 D，它是 {&#39;1&#39;,&#39;2&#39;,&#39;3&#39;,&#39;4&#39;,&#39;5&#39;,&#39;6&#39;,&#39;7&#39;,&#39;8&#39;,&#39;9&#39;} 的非空子集。（请注意，&lsquo;0&rsquo; 不包括在内。）
+现在，我们用这些数字进行组合写数字，想用多少次就用多少次。例如 D = {&#39;1&#39;,&#39;3&#39;,&#39;5&#39;}，我们可以写出像 &#39;13&#39;, &#39;551&#39;, &#39;1351315&#39; 这样的数字。
+返回可以用 D 中的数字写出的小于或等于 N 的正整数的数目
+ 代码模版以及分析过程 我会结合代码模版来对数位dp问题进行一轮分析
+python代码模版如下（以leetcode 233为例）：
+class Solution: def __init__(self): # 初始化n的上界数组a # 初始化记忆化数组dp，通常dp的大小需要通过分析题目来得出 self."/>
+
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="J.Q.HUO" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">J.Q.HUO</div>
+					
+				</div>
+		</a>
+	</div>
+		<div class="divider"></div>
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">对数位dp的理解</h1>
+			<div class="post__meta meta"><div class="meta__item-author meta__item">
+	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">J.Q.HUO</span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-08-14T22:48:50&#43;01:00">2021-08-14</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E7%AE%97%E6%B3%95%E5%88%B7%E9%A2%98/" rel="category">算法刷题</a>
+	</span>
+</div></div>
+		</header>
+<div class="post__toc toc">
+	<div class="toc__title">Page content</div>
+	<div class="toc__menu">
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#什么是数位dp">什么是数位dp</a></li>
+    <li><a href="#代码模版以及分析过程">代码模版以及分析过程</a>
+      <ul>
+        <li><a href="#dfs函数的设计">dfs函数的设计</a></li>
+        <li><a href="#前导0的影响">前导0的影响</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+	</div>
+</div><div class="content post__content clearfix">
+			<p>我开始做数位dp相关习题的最主要原因就是被7.30阿里笔试第一题虐到了&hellip;当时答完题直接自闭，第一题都没做出来，然后上牛客看一个的解法说是数位dp，之后一查居然是算法竞赛才会研究的专题orz&hellip;不管怎么说最近的一段研究也算是让我摆脱了“大区间内满足条件的数字个数查找”类型的题目无从下手的尴尬处境，接下来就谈谈我对这类题目以及数位dp的看法</p>
+<h2 id="什么是数位dp">什么是数位dp</h2>
+<p>简单来说是对给定的一个相对大的数n，将n的从高到低位用一个数组保存，然后通过分析n的各个数位之间的依赖关系（通常是题目的约束条件，比如<!-- raw HTML omitted --><strong>相邻两个数字之差</strong><!-- raw HTML omitted -->啥的）进行动态规划的一个过程（这里用记忆化dfs实现比较好理解）</p>
+<p>数位dp可以用来解决<!-- raw HTML omitted --><strong>大区间内满足条件的数的个数查找</strong><!-- raw HTML omitted -->类问题，让我们通过以下题目来对数位dp进行一个感性的认知：</p>
+<blockquote>
+<p>leetcode 233 <a href="https://leetcode-cn.com/problems/number-of-digit-one/">数字1的个数</a><br>
+给定一个整数<code>n</code>，计算所有小于等于<code>n</code>的非负整数中数字<code>1</code>出现的个数，其中1&lt;=n&lt;=10^8</p>
+</blockquote>
+<blockquote>
+<p>leetcode 1067 <a href="https://leetcode-cn.com/problems/digit-count-in-range/">范围内的数字计数</a><br>
+给定一个在 <code>0</code>到 <code>9</code> 之间的整数 <code>d</code>，和两个正整数 <code>low</code> 和 <code>high</code> 分别作为上下界。返回 <code>d</code>在 <code>low</code> 和 <code>high</code> 之间的整数中出现的次数，包括边界 <code>low</code> 和 <code>high</code></p>
+</blockquote>
+<blockquote>
+<p>leetcode 600 <a href="https://leetcode-cn.com/problems/non-negative-integers-without-consecutive-ones/">不含连续1的非负整数个数</a><br>
+给定一个正整数 <code>n</code>，找出小于或等于 <code>n</code> 的非负整数中，其二进制表示不包含 连续的<code>1</code>的个数。</p>
+</blockquote>
+<blockquote>
+<p>leetcode 902 <a href="https://leetcode-cn.com/problems/numbers-at-most-n-given-digit-set/">最大为N的数字组合</a><br>
+我们有一组排序的数字 <code>D</code>，它是  <code>{'1','2','3','4','5','6','7','8','9'}</code> 的非空子集。（请注意，&lsquo;0&rsquo; 不包括在内。）<br>
+现在，我们用这些数字进行组合写数字，想用多少次就用多少次。例如 <code>D = {'1','3','5'}</code>，我们可以写出像 <code>'13', '551', '1351315'</code> 这样的数字。<br>
+返回可以用 D 中的数字写出的小于或等于 N 的正整数的数目</p>
+</blockquote>
+<h2 id="代码模版以及分析过程">代码模版以及分析过程</h2>
+<p>我会结合代码模版来对数位dp问题进行一轮分析<br>
+python代码模版如下（以leetcode 233为例）：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span>:
+    <span style="color:#66d9ef">def</span> __init__(self):
+        <span style="color:#75715e"># 初始化n的上界数组a</span>
+        <span style="color:#75715e"># 初始化记忆化数组dp，通常dp的大小需要通过分析题目来得出</span>
+        self<span style="color:#f92672">.</span>a <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0</span> <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">12</span>)]
+        self<span style="color:#f92672">.</span>dp <span style="color:#f92672">=</span> [[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">12</span>)] <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">12</span>)] 
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">dfs</span>(self, pos:int, pre:int, limit:bool)<span style="color:#f92672">-&gt;</span>int:
+        <span style="color:#66d9ef">if</span> pos <span style="color:#f92672">==</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>:<span style="color:#66d9ef">return</span> pre
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> limit <span style="color:#f92672">and</span> self<span style="color:#f92672">.</span>dp[pos][pre]<span style="color:#f92672">!=-</span><span style="color:#ae81ff">1</span>:<span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>dp[pos][pre]
+        up <span style="color:#f92672">=</span> <span style="color:#ae81ff">9</span> <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> limit <span style="color:#66d9ef">else</span> self<span style="color:#f92672">.</span>a[pos]
+        ans <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+        <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(up<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>):
+            <span style="color:#66d9ef">if</span> i<span style="color:#f92672">==</span><span style="color:#ae81ff">1</span>:
+                ans <span style="color:#f92672">+=</span> self<span style="color:#f92672">.</span>dfs(pos<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,pre<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>,limit <span style="color:#f92672">and</span> i<span style="color:#f92672">==</span>self<span style="color:#f92672">.</span>a[pos])
+            <span style="color:#66d9ef">else</span>:
+                ans <span style="color:#f92672">+=</span> self<span style="color:#f92672">.</span>dfs(pos<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,pre,limit <span style="color:#f92672">and</span> i<span style="color:#f92672">==</span>self<span style="color:#f92672">.</span>a[pos])
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> limit:self<span style="color:#f92672">.</span>dp[pos][pre] <span style="color:#f92672">=</span> ans
+        <span style="color:#66d9ef">return</span> ans
+    
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">solve</span>(self,n):
+        <span style="color:#75715e"># 将输入的n的各个位保存在数组a中，称为n的上界数组，pos从高位开始依此向低位遍历</span>
+        pos <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+        <span style="color:#66d9ef">while</span> n<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">0</span>:
+            self<span style="color:#f92672">.</span>a[pos] <span style="color:#f92672">=</span> n<span style="color:#f92672">%</span><span style="color:#ae81ff">10</span>
+            n <span style="color:#f92672">//=</span> <span style="color:#ae81ff">10</span>
+            pos <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>dfs(pos<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,True)
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">countDigitOne</span>(self, n: int) <span style="color:#f92672">-&gt;</span> int:
+        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>solve(n)
+</code></pre></div><p>其中<code>dfs()</code>函数用来进行记忆化递归，<code>solve()</code>对给定的上界<code>n</code>计算结果</p>
+<h3 id="dfs函数的设计">dfs函数的设计</h3>
+<p>一般<code>dfs()</code>函数会保存以下几个状态变量：<code>pos</code>表示当前遍历的数位，<code>limit</code>表示当前位的<!-- raw HTML omitted --><strong>上一位</strong><!-- raw HTML omitted -->是否是一个上界数，<code>zero</code>（该题中不需要）表示当前位的<!-- raw HTML omitted --><strong>上一位</strong><!-- raw HTML omitted -->是否是前导0.<br>
+其中记忆化dp数组保存的是一般性的状态，即“当前位”的上一位既不是上界数也不是前导0的前提下，当前位满足题意的状态，需要在代码中用</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> limit <span style="color:#f92672">and</span> <span style="color:#f92672">not</span> zero <span style="color:#f92672">and</span> dp[pos]<span style="color:#f92672">!=-</span><span style="color:#ae81ff">1</span>:<span style="color:#66d9ef">return</span> dp[pos]
+</code></pre></div><p>来表示如果是一般性的状态，就直接返回记忆化数组中的值<br>
+如果某一位的上一位不是上界数组中的值，说明该位枚举任意数字都会使得当前的数超过上界<code>n</code>，这很好理解，比如我们有上界数为<code>644</code>，pos=1即当前处于枚举状态的位为十位，假设百位为5，那么pos位即可以枚举0-9之间的任意数字，都不会使得当前的数字超过644，反之如果pos的上一位（百位）为6，则pos位的枚举范围就被限定在了0-a[pos]内。盘清了该逻辑，就不难理解为什么要用记忆化数组保存<strong>一般性的状态</strong>了，因为一般性的状态会涉及到大量的重复计算</p>
+<h3 id="前导0的影响">前导0的影响</h3>
+<p>假设上界n有x位，那么当我们枚举x-1至0位的时候会出现前导0，假设上界n为<code>644</code>，则当枚举0-99之间的数时会出现<code>001</code>,<code>099</code>之类的现象，此时需要根据题目来分析是否需要处理前导0现象</p>
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" rel="tag">动态规划</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/%E8%AE%B0%E5%BF%86%E5%8C%96dfs/" rel="tag">记忆化dfs</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<figure class="authorbox__avatar">
+		<img alt="J.Q.HUO avatar" src="/img/avatar.png" class="avatar" height="90" width="90">
+	</figure>
+	<div class="authorbox__header">
+		<span class="authorbox__name">About J.Q.HUO</span>
+	</div>
+	<div class="authorbox__description">
+		KCL在读Master，主业歌手副业码农
+	</div>
+</div>
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/post/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%98%AF%E5%A6%82%E4%BD%95%E5%AD%98%E5%82%A8%E7%9A%84/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">字符编码</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2021 params.copyright.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>

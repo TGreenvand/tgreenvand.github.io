@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on J.Q.HUO</title>
-    <link>https://tgreenvand.github.io/post/</link>
-    <description>Recent content in Posts on J.Q.HUO</description>
+    <title>动态规划 on J.Q.HUO</title>
+    <link>https://tgreenvand.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</link>
+    <description>Recent content in 动态规划 on J.Q.HUO</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 14 Aug 2021 22:48:50 +0100</lastBuildDate>
     
-	<atom:link href="https://tgreenvand.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://tgreenvand.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -33,20 +33,6 @@
  代码模版以及分析过程 我会结合代码模版来对数位dp问题进行一轮分析
 python代码模版如下（以leetcode 233为例）：
 class Solution: def __init__(self): # 初始化n的上界数组a # 初始化记忆化数组dp，通常dp的大小需要通过分析题目来得出 self.</description>
-    </item>
-    
-    <item>
-      <title>字符编码</title>
-      <link>https://tgreenvand.github.io/post/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%98%AF%E5%A6%82%E4%BD%95%E5%AD%98%E5%82%A8%E7%9A%84/</link>
-      <pubDate>Mon, 09 Aug 2021 20:40:21 +0100</pubDate>
-      
-      <guid>https://tgreenvand.github.io/post/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%98%AF%E5%A6%82%E4%BD%95%E5%AD%98%E5%82%A8%E7%9A%84/</guid>
-      <description>字符编码指的是对每一个独一无二的字符赋予一个数字，然后将这个数字转换成计算机二进制补码的方式存储，这样计算机就可以识别每个字符了。
-目前耳熟能详的对字符进行编码的方法有ASCII、Unicode和UTF-8，本文主要介绍这三种编码方式的区别以及演化
-字符编码的演化 总的来说，ASCII（发音为&amp;quot;askey&amp;rdquo;）编码方式用7位二进制数编码了128个字符，最高位统一规定为0. ASCII编码主要面对的是大小写英文字母，数字0-9，各种标点符号以及一些特殊字符。
-由于世界上的字符远不止128个，各个国家的语言也会有其特殊的字符存在，所以需要一种统一的编码方式来对世界上可能存在的所有字符进行编码，于是就诞生了Unicode统一码，Unicode采用定长的方式对每个字符进行编码
-Unicode暴露的问题是，如果对每个字符都用定长编码，对于一些只需要单字节存储的字符来说，存储的成本较高，于是出现了多种Unicode编码的实现方式，UTF-8就是其中的一种。
-UTF-8以字节为单位对Unicode进行编码，实现了对于长字符编码长度较长，短字符编码长度较短的效果</description>
     </item>
     
   </channel>

@@ -4,14 +4,14 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Posts - HUO JINQI</title>
+	<title>Posts - J.Q.HUO</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 		<meta property="og:title" content="Posts" />
 <meta property="og:description" content="params.description 出现的位置" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://tgreenvand.github.io/post/" />
-<meta property="og:updated_time" content="2021-08-09T20:40:21+01:00" />
+<meta property="og:updated_time" content="2021-08-14T22:48:50+01:00" />
 
 		<meta itemprop="name" content="Posts">
 <meta itemprop="description" content="params.description 出现的位置">
@@ -27,7 +27,7 @@
 
 	<link rel="stylesheet" href="/css/style.css">
 	
-	<link rel="alternate" type="application/rss+xml" href="/post/index.xml" title="HUO JINQI">
+	<link rel="alternate" type="application/rss+xml" href="/post/index.xml" title="J.Q.HUO">
 
 	<link rel="shortcut icon" href="/favicon.ico">
 		
@@ -38,9 +38,9 @@
 	<div class="container header__container">
 		
 	<div class="logo">
-		<a class="logo__link" href="/" title="HUO JINQI" rel="home">
+		<a class="logo__link" href="/" title="J.Q.HUO" rel="home">
 			<div class="logo__item logo__text">
-					<div class="logo__title">HUO JINQI</div>
+					<div class="logo__title">J.Q.HUO</div>
 					
 				</div>
 		</a>
@@ -57,11 +57,46 @@
 	</header><article class="list__item post">
 	<header class="list__header">
 		<h2 class="list__title post__title">
+			<a href="/post/%E5%AF%B9%E6%95%B0%E4%BD%8Ddp%E7%9A%84%E7%90%86%E8%A7%A3/" rel="bookmark">
+			对数位dp的理解
+			</a>
+		</h2>
+		<div class="list__meta meta"><div class="meta__item-author meta__item">
+	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">J.Q.HUO</span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-08-14T22:48:50&#43;01:00">2021-08-14</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E7%AE%97%E6%B3%95%E5%88%B7%E9%A2%98/" rel="category">算法刷题</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		我开始做数位dp相关习题的最主要原因就是被7.30阿里笔试第一题虐到了&hellip;当时答完题直接自闭，第一题都没做出来，然后上牛客看一个的解法说是数位dp，之后一查居然是算法竞赛才会研究的专题orz&hellip;不管怎么说最近的一段研究也算是让我摆脱了“大区间内满足条件的数字个数查找”类型的题目无从下手的尴尬处境，接下来就谈谈我对这类题目以及数位dp的看法
+什么是数位dp 简单来说是对给定的一个相对大的数n，将n的从高到低位用一个数组保存，然后通过分析n的各个数位之间的依赖关系（通常是题目的约束条件，比如相邻两个数字之差啥的）进行动态规划的一个过程（这里用记忆化dfs实现比较好理解）
+数位dp可以用来解决大区间内满足条件的数的个数查找类问题，让我们通过以下题目来对数位dp进行一个感性的认知：
+ leetcode 233 数字1的个数
+给定一个整数n，计算所有小于等于n的非负整数中数字1出现的个数，其中1&lt;=n&lt;=10^8
+  leetcode 1067 范围内的数字计数
+给定一个在 0到 9 之间的整数 d，和两个正整数 low 和 high 分别作为上下界。返回 d在 low 和 high 之间的整数中出现的次数，包括边界 low 和 high
+  leetcode 600 不含连续1的非负整数个数
+给定一个正整数 n，找出小于或等于 n 的非负整数中，其二进制表示不包含 连续的1的个数。
+  leetcode 902 最大为N的数字组合
+我们有一组排序的数字 D，它是 {'1','2','3','4','5','6','7','8','9'} 的非空子集。（请注意，&lsquo;0&rsquo; 不包括在内。）
+现在，我们用这些数字进行组合写数字，想用多少次就用多少次。例如 D = {'1','3','5'}，我们可以写出像 '13', '551', '1351315' 这样的数字。
+返回可以用 D 中的数字写出的小于或等于 N 的正整数的数目
+ 代码模版以及分析过程 我会结合代码模版来对数位dp问题进行一轮分析
+python代码模版如下（以leetcode 233为例）：
+class Solution: def __init__(self): # 初始化n的上界数组a # 初始化记忆化数组dp，通常dp的大小需要通过分析题目来得出 self.
+	</div>
+</article><article class="list__item post">
+	<header class="list__header">
+		<h2 class="list__title post__title">
 			<a href="/post/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%98%AF%E5%A6%82%E4%BD%95%E5%AD%98%E5%82%A8%E7%9A%84/" rel="bookmark">
 			字符编码
 			</a>
 		</h2>
-		<div class="list__meta meta">
+		<div class="list__meta meta"><div class="meta__item-author meta__item">
+	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">J.Q.HUO</span>
+</div>
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-08-09T20:40:21&#43;01:00">2021-08-09</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" rel="category">计算机基础知识</a>
 	</span>
@@ -94,6 +129,7 @@ UTF-8以字节为单位对Unicode进行编码，实现了对于长字符编码�
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/%E5%AF%B9%E6%95%B0%E4%BD%8Ddp%E7%9A%84%E7%90%86%E8%A7%A3/">对数位dp的理解</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%98%AF%E5%A6%82%E4%BD%95%E5%AD%98%E5%82%A8%E7%9A%84/">字符编码</a></li>
 		</ul>
 	</div>
@@ -103,6 +139,8 @@ UTF-8以字节为单位对Unicode进行编码，实现了对于长字符编码�
 	<div class="widget__content">
 		<ul class="widget__list">
 			<li class="widget__item">
+				<a class="widget__link" href="/categories/%E7%AE%97%E6%B3%95%E5%88%B7%E9%A2%98/">算法刷题</a></li>
+			<li class="widget__item">
 				<a class="widget__link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">计算机基础知识</a></li>
 		</ul>
 	</div>
@@ -110,7 +148,9 @@ UTF-8以字节为单位对Unicode进行编码，实现了对于长字符编码�
 <div class="widget-taglist widget">
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" title="动态规划">动态规划</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" title="基础知识">基础知识</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E8%AE%B0%E5%BF%86%E5%8C%96dfs/" title="记忆化dfs">记忆化dfs</a>
 	</div>
 </div>
 </aside>
