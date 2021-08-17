@@ -13,10 +13,10 @@
     
     <item>
       <title>对数位dp的理解</title>
-      <link>https://tgreenvand.github.io/post/%E5%AF%B9%E6%95%B0%E4%BD%8Ddp%E7%9A%84%E7%90%86%E8%A7%A3/</link>
+      <link>https://tgreenvand.github.io/post/digitdp/</link>
       <pubDate>Sat, 14 Aug 2021 22:48:50 +0100</pubDate>
       
-      <guid>https://tgreenvand.github.io/post/%E5%AF%B9%E6%95%B0%E4%BD%8Ddp%E7%9A%84%E7%90%86%E8%A7%A3/</guid>
+      <guid>https://tgreenvand.github.io/post/digitdp/</guid>
       <description>我开始做数位dp相关习题的最主要原因就是被7.30阿里笔试第一题虐到了&amp;hellip;当时答完题直接自闭，第一题都没做出来，然后上牛客看一个的解法说是数位dp，之后一查居然是算法竞赛才会研究的专题orz&amp;hellip;不管怎么说最近的一段研究也算是让我摆脱了“大区间内满足条件的数字个数查找”类型的题目无从下手的尴尬处境，接下来就谈谈我对这类题目以及数位dp的看法
 什么是数位dp 简单来说是对给定的一个相对大的数n，将n的从高到低位用一个数组保存，然后通过分析n的各个数位之间的依赖关系（通常是题目的约束条件，比如相邻两个数字之差啥的）进行动态规划的一个过程（这里用记忆化dfs实现比较好理解）
 数位dp可以用来解决大区间内满足条件的数的个数查找类问题，让我们通过以下题目来对数位dp进行一个感性的认知：

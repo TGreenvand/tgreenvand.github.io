@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>我的2022秋招 - J.Q.HUO</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+		<meta property="og:title" content="我的2022秋招" />
+<meta property="og:description" content="对于我而言，我的秋招过程就是一个不断经历失败，同时也不断突破自我的过程。很庆幸，不论是出于兴趣，还是盲目跟风，我最终选择了走CS这条路，这是一个需要和计算机进行沟通，更需要和自己进行沟通的领域。也希望自己在这趟旅程中尽可能说服自己，求一个念头通达，圆融如意。
+ 让我们回到现实
+截至目前，总共经历16场面试，面试通过14场，失败2场。以下是目前我面过的公司的面经，由于个人项目的部分因人而异，这里只列出普适性的问题
+字节跳动—国际化电商后端 一面（pass）  详细解释一下mysql事务ACID特性？ mysql怎么实现持久化的？数据库宕机怎么进行数据恢复？ 什么是mysql的MVCC？MVCC怎么实现的？ 详细讲一下TCP4次挥手，3次握手？为什么要4次挥手？ 客户端断开连接的过程 用过哪些shell命令？题目：如何统计访问日志的“99”线，写命令实现 进程和线程的区别？如果一个进程中的线程过多会出现什么情况 进程和线程的上下文切换对比 算法题：给定一个链表，奇数位升序排列，偶数位降序排列，要求输出一个全局升序排列的链表  二面（fail）  HTTP和HTTPS的区别，什么是对称加密和非对称加密 对称加密和非对称加密有什么优缺点，分别应用在什么场景 mysql有哪些锁，意向锁有什么作用 mysql事务有哪些隔离级别，分别解决了什么现象 redis缓存机制，什么是缓存雪崩、缓存穿透、缓存击穿，分别怎么解决 算法题：输出最小字典序的最长递增子序列  阿里云智能信息事业部&ndash;后端开发 一面（pass）  用户从url输入到后端返回经历哪些过程（主要考察后端架构的理解）？ 分发逻辑怎么实现的？看没看过源码？能怎么改进？主要难题是什么？ mysql主从架构 mysql有哪些引擎，innodb的新特性 mysql的事务特性，mysql的redolog的作用 mysql锁机制，讲的越详细越好 什么是回表？ 用过哪些shell命令？sed和awk用过吗？ 听说过nosql吗？有没有用过离线分析的数据库？ 算法题   反转链表     求数据流中第K大的元素     给定范围0&lt;a&lt;10^18的整数，求不包含0-9某个数字且小于a的数字个数    二面（pass）  你理解的后端和算法的区别是什么 自己的职业规划？ redis怎么保证缓存和数据库的一致性 mysql 慢查询怎么优化？ 联合索引(A,B,C)索引的顺序影响mysql的性能吗 1亿的数据量放在线上mysql库中可能出现的问题是什么？怎么解决？（分库分表）  滴滴广告业务部go后端开发 一面（pass）  100个进程同时执行update t set k = k&#43;1 where id = 1 会发生什么情况（回答了写锁等待，然后被追问依据是什么，回答了update当前读机制如果没有锁等待会导致数据不一致的问题） 如果100个请求同时更新呢，在redis中会出现什么情况 查看cpu占用信息的命令？查看内存占用信息的命令？ 算法题   求两个字符串数字的差     给定一个数组，O(n)时间O(1)空间地将数组中的0元素移动到末尾，并保证数组中元素的相对顺序     给定一组硬币面值可重复使用，求出凑齐k元的硬币最小数量     两数之和    二面（pass）  自我介绍&#43;毕业时间&#43;印象最深的项目&#43;项目细节盘问 算法题：螺旋打印矩阵中的元素  三面（pass）  自我介绍&#43;项目介绍（这一面盘把所有实习经历都盘问了一遍，要求讲自己一天的工作流程，举一个开发例子，尽可能细节）  HR面（pass）  最有成就感的事情 实习经历最大的收获 实习期间遇到的困难怎么解决  知乎golang后端开发 一面(pass)  少量的key值要在后端进行过滤，如何设计才能保证后端数据库不被不存在的key攻击？ 少量的key值要进行redis存储，用什么数据结构？ 大量的key在后端存储，如何设计才能不被攻击？（bitmap，布隆过滤器） mysql索引机制，为什么使用B&#43;树进行存储？为什么不用二叉树，为什么不用B树 为什么使用自增id作为主键 mysql事务的隔离级别有哪些？分别解决了什么问题 python 的super机制，装饰器 对HTTP无状态怎么理解的，Cookie机制的流程，服务器怎么存储cookie的 负载均衡的场景，怎么应对一台机器上保存了cookie而请求被转发到其他的机器上（请求固定转发，负载均衡端保存全局cookie） 大量用户id和电话号码，一个频繁请求的场景，如何设计索引（电话号&#43;uid组合索引，覆盖索引机制） 操作系统，IO多路复用，对select/epoll的理解 算法题：打印二叉树每层最小的节点值  百度&ndash;go后端开发 一面（fail）  url输入到展现过程？ mysql题目：给定一个表统计pv、uv shell题目：统计文件中出现次数最多的10个ip 进程和线程的区别，堆栈的区别 算法题：快速排序  百度&ndash;搜索平台研发部go后端开发 一面（pass）  mysql最左原则是什么、事务介绍，ACID四个特性分别怎么实现（越详细越好） 介绍一下mysql的锁机制 给定一个学生选课表，统计每个学生的选课门数，写一个sql语句 TCP怎么保持稳定性，TCP拥塞控制算法介绍（越详细越好），close_wait数量太多怎么解决 怎么通过命令查询进程监听的端口号 select/epoll模型的理解 哈希表如何处理冲突，红黑树了解到什么程度 介绍一下常用排序算法以及应用场景 TopK问题怎么解决 算法题：leetcode电话号码的字母组合  二面(pass) bilibili&ndash;流媒体算法工程师 一面（pass）  对机器学习算法了解到什么程度，过往的算法项目做到什么程度 算法题：  最长上升子序列（贪心&#43;二分查找） 用栈实现队列   TCP和UDP的区别，TCP可靠性是怎么实现的，为什么UDP不可靠 如果想要UDP也可靠的话应该怎么实现 进程和线程的区别、进程之间的通信方式 常用的数据结构了解哪些 智力题  128个队伍进行淘汰赛，总共需要两两进行多少场比赛 3L和5L的桶，装出4L的水如何操作    二面() 好未来—服务端go开发工程师 一面（pass）  mysql分库分表了解吗，当时的公司的mysql库的架构是什么 mysql事务的ACID四个特性怎么实现的，mysql的redolog是什么，有什么作用 mysql的MVCC是怎么实现的 mysql有哪些隔离级别，脏读不可重复读幻读分别是怎么解决的 mysql的锁有哪些，什么是next-key lock，怎么加读写锁（语法层面） mysql聚簇索引和非聚簇索引，为什么mysql用B&#43;树，为什么不用哈希表和二叉树 mysql在非聚簇索引上查询数据的过程（回表，多一次磁盘访问操作） 缓存穿透、缓存雪崩怎么解决（这里缓存穿透提出了永久驻留数据，面试官给出了代码层面的解决方案） redis是单线程、单进程、单进程多线程还是多进程多线程？为什么是单线程设计？还有没有其他的线程/进程了？ redis rdb日志创建过程，什么是写时复制，为什么要fork子进程，为什么不fork子线程 创建rdb日志的时候如果fork子进程，会存在数据冲突吗（操作系统层面解决了这个问题） 小内存大数据文件怎么排序，小内存大数据文件TopK问题（最小堆） 算法题：实现堆的插入操作  二面（pass） 3道系统设计题" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://tgreenvand.github.io/post/jobinterviewin2020/" />
+<meta property="article:published_time" content="2021-08-17T22:30:37+01:00" />
+<meta property="article:modified_time" content="2021-08-17T22:30:37+01:00" />
+
+		<meta itemprop="name" content="我的2022秋招">
+<meta itemprop="description" content="对于我而言，我的秋招过程就是一个不断经历失败，同时也不断突破自我的过程。很庆幸，不论是出于兴趣，还是盲目跟风，我最终选择了走CS这条路，这是一个需要和计算机进行沟通，更需要和自己进行沟通的领域。也希望自己在这趟旅程中尽可能说服自己，求一个念头通达，圆融如意。
+ 让我们回到现实
+截至目前，总共经历16场面试，面试通过14场，失败2场。以下是目前我面过的公司的面经，由于个人项目的部分因人而异，这里只列出普适性的问题
+字节跳动—国际化电商后端 一面（pass）  详细解释一下mysql事务ACID特性？ mysql怎么实现持久化的？数据库宕机怎么进行数据恢复？ 什么是mysql的MVCC？MVCC怎么实现的？ 详细讲一下TCP4次挥手，3次握手？为什么要4次挥手？ 客户端断开连接的过程 用过哪些shell命令？题目：如何统计访问日志的“99”线，写命令实现 进程和线程的区别？如果一个进程中的线程过多会出现什么情况 进程和线程的上下文切换对比 算法题：给定一个链表，奇数位升序排列，偶数位降序排列，要求输出一个全局升序排列的链表  二面（fail）  HTTP和HTTPS的区别，什么是对称加密和非对称加密 对称加密和非对称加密有什么优缺点，分别应用在什么场景 mysql有哪些锁，意向锁有什么作用 mysql事务有哪些隔离级别，分别解决了什么现象 redis缓存机制，什么是缓存雪崩、缓存穿透、缓存击穿，分别怎么解决 算法题：输出最小字典序的最长递增子序列  阿里云智能信息事业部&ndash;后端开发 一面（pass）  用户从url输入到后端返回经历哪些过程（主要考察后端架构的理解）？ 分发逻辑怎么实现的？看没看过源码？能怎么改进？主要难题是什么？ mysql主从架构 mysql有哪些引擎，innodb的新特性 mysql的事务特性，mysql的redolog的作用 mysql锁机制，讲的越详细越好 什么是回表？ 用过哪些shell命令？sed和awk用过吗？ 听说过nosql吗？有没有用过离线分析的数据库？ 算法题   反转链表     求数据流中第K大的元素     给定范围0&lt;a&lt;10^18的整数，求不包含0-9某个数字且小于a的数字个数    二面（pass）  你理解的后端和算法的区别是什么 自己的职业规划？ redis怎么保证缓存和数据库的一致性 mysql 慢查询怎么优化？ 联合索引(A,B,C)索引的顺序影响mysql的性能吗 1亿的数据量放在线上mysql库中可能出现的问题是什么？怎么解决？（分库分表）  滴滴广告业务部go后端开发 一面（pass）  100个进程同时执行update t set k = k&#43;1 where id = 1 会发生什么情况（回答了写锁等待，然后被追问依据是什么，回答了update当前读机制如果没有锁等待会导致数据不一致的问题） 如果100个请求同时更新呢，在redis中会出现什么情况 查看cpu占用信息的命令？查看内存占用信息的命令？ 算法题   求两个字符串数字的差     给定一个数组，O(n)时间O(1)空间地将数组中的0元素移动到末尾，并保证数组中元素的相对顺序     给定一组硬币面值可重复使用，求出凑齐k元的硬币最小数量     两数之和    二面（pass）  自我介绍&#43;毕业时间&#43;印象最深的项目&#43;项目细节盘问 算法题：螺旋打印矩阵中的元素  三面（pass）  自我介绍&#43;项目介绍（这一面盘把所有实习经历都盘问了一遍，要求讲自己一天的工作流程，举一个开发例子，尽可能细节）  HR面（pass）  最有成就感的事情 实习经历最大的收获 实习期间遇到的困难怎么解决  知乎golang后端开发 一面(pass)  少量的key值要在后端进行过滤，如何设计才能保证后端数据库不被不存在的key攻击？ 少量的key值要进行redis存储，用什么数据结构？ 大量的key在后端存储，如何设计才能不被攻击？（bitmap，布隆过滤器） mysql索引机制，为什么使用B&#43;树进行存储？为什么不用二叉树，为什么不用B树 为什么使用自增id作为主键 mysql事务的隔离级别有哪些？分别解决了什么问题 python 的super机制，装饰器 对HTTP无状态怎么理解的，Cookie机制的流程，服务器怎么存储cookie的 负载均衡的场景，怎么应对一台机器上保存了cookie而请求被转发到其他的机器上（请求固定转发，负载均衡端保存全局cookie） 大量用户id和电话号码，一个频繁请求的场景，如何设计索引（电话号&#43;uid组合索引，覆盖索引机制） 操作系统，IO多路复用，对select/epoll的理解 算法题：打印二叉树每层最小的节点值  百度&ndash;go后端开发 一面（fail）  url输入到展现过程？ mysql题目：给定一个表统计pv、uv shell题目：统计文件中出现次数最多的10个ip 进程和线程的区别，堆栈的区别 算法题：快速排序  百度&ndash;搜索平台研发部go后端开发 一面（pass）  mysql最左原则是什么、事务介绍，ACID四个特性分别怎么实现（越详细越好） 介绍一下mysql的锁机制 给定一个学生选课表，统计每个学生的选课门数，写一个sql语句 TCP怎么保持稳定性，TCP拥塞控制算法介绍（越详细越好），close_wait数量太多怎么解决 怎么通过命令查询进程监听的端口号 select/epoll模型的理解 哈希表如何处理冲突，红黑树了解到什么程度 介绍一下常用排序算法以及应用场景 TopK问题怎么解决 算法题：leetcode电话号码的字母组合  二面(pass) bilibili&ndash;流媒体算法工程师 一面（pass）  对机器学习算法了解到什么程度，过往的算法项目做到什么程度 算法题：  最长上升子序列（贪心&#43;二分查找） 用栈实现队列   TCP和UDP的区别，TCP可靠性是怎么实现的，为什么UDP不可靠 如果想要UDP也可靠的话应该怎么实现 进程和线程的区别、进程之间的通信方式 常用的数据结构了解哪些 智力题  128个队伍进行淘汰赛，总共需要两两进行多少场比赛 3L和5L的桶，装出4L的水如何操作    二面() 好未来—服务端go开发工程师 一面（pass）  mysql分库分表了解吗，当时的公司的mysql库的架构是什么 mysql事务的ACID四个特性怎么实现的，mysql的redolog是什么，有什么作用 mysql的MVCC是怎么实现的 mysql有哪些隔离级别，脏读不可重复读幻读分别是怎么解决的 mysql的锁有哪些，什么是next-key lock，怎么加读写锁（语法层面） mysql聚簇索引和非聚簇索引，为什么mysql用B&#43;树，为什么不用哈希表和二叉树 mysql在非聚簇索引上查询数据的过程（回表，多一次磁盘访问操作） 缓存穿透、缓存雪崩怎么解决（这里缓存穿透提出了永久驻留数据，面试官给出了代码层面的解决方案） redis是单线程、单进程、单进程多线程还是多进程多线程？为什么是单线程设计？还有没有其他的线程/进程了？ redis rdb日志创建过程，什么是写时复制，为什么要fork子进程，为什么不fork子线程 创建rdb日志的时候如果fork子进程，会存在数据冲突吗（操作系统层面解决了这个问题） 小内存大数据文件怎么排序，小内存大数据文件TopK问题（最小堆） 算法题：实现堆的插入操作  二面（pass） 3道系统设计题">
+<meta itemprop="datePublished" content="2021-08-17T22:30:37+01:00" />
+<meta itemprop="dateModified" content="2021-08-17T22:30:37+01:00" />
+<meta itemprop="wordCount" content="157">
+
+
+
+<meta itemprop="keywords" content="后端求职面试," />
+
+		<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="我的2022秋招"/>
+<meta name="twitter:description" content="对于我而言，我的秋招过程就是一个不断经历失败，同时也不断突破自我的过程。很庆幸，不论是出于兴趣，还是盲目跟风，我最终选择了走CS这条路，这是一个需要和计算机进行沟通，更需要和自己进行沟通的领域。也希望自己在这趟旅程中尽可能说服自己，求一个念头通达，圆融如意。
+ 让我们回到现实
+截至目前，总共经历16场面试，面试通过14场，失败2场。以下是目前我面过的公司的面经，由于个人项目的部分因人而异，这里只列出普适性的问题
+字节跳动—国际化电商后端 一面（pass）  详细解释一下mysql事务ACID特性？ mysql怎么实现持久化的？数据库宕机怎么进行数据恢复？ 什么是mysql的MVCC？MVCC怎么实现的？ 详细讲一下TCP4次挥手，3次握手？为什么要4次挥手？ 客户端断开连接的过程 用过哪些shell命令？题目：如何统计访问日志的“99”线，写命令实现 进程和线程的区别？如果一个进程中的线程过多会出现什么情况 进程和线程的上下文切换对比 算法题：给定一个链表，奇数位升序排列，偶数位降序排列，要求输出一个全局升序排列的链表  二面（fail）  HTTP和HTTPS的区别，什么是对称加密和非对称加密 对称加密和非对称加密有什么优缺点，分别应用在什么场景 mysql有哪些锁，意向锁有什么作用 mysql事务有哪些隔离级别，分别解决了什么现象 redis缓存机制，什么是缓存雪崩、缓存穿透、缓存击穿，分别怎么解决 算法题：输出最小字典序的最长递增子序列  阿里云智能信息事业部&ndash;后端开发 一面（pass）  用户从url输入到后端返回经历哪些过程（主要考察后端架构的理解）？ 分发逻辑怎么实现的？看没看过源码？能怎么改进？主要难题是什么？ mysql主从架构 mysql有哪些引擎，innodb的新特性 mysql的事务特性，mysql的redolog的作用 mysql锁机制，讲的越详细越好 什么是回表？ 用过哪些shell命令？sed和awk用过吗？ 听说过nosql吗？有没有用过离线分析的数据库？ 算法题   反转链表     求数据流中第K大的元素     给定范围0&lt;a&lt;10^18的整数，求不包含0-9某个数字且小于a的数字个数    二面（pass）  你理解的后端和算法的区别是什么 自己的职业规划？ redis怎么保证缓存和数据库的一致性 mysql 慢查询怎么优化？ 联合索引(A,B,C)索引的顺序影响mysql的性能吗 1亿的数据量放在线上mysql库中可能出现的问题是什么？怎么解决？（分库分表）  滴滴广告业务部go后端开发 一面（pass）  100个进程同时执行update t set k = k&#43;1 where id = 1 会发生什么情况（回答了写锁等待，然后被追问依据是什么，回答了update当前读机制如果没有锁等待会导致数据不一致的问题） 如果100个请求同时更新呢，在redis中会出现什么情况 查看cpu占用信息的命令？查看内存占用信息的命令？ 算法题   求两个字符串数字的差     给定一个数组，O(n)时间O(1)空间地将数组中的0元素移动到末尾，并保证数组中元素的相对顺序     给定一组硬币面值可重复使用，求出凑齐k元的硬币最小数量     两数之和    二面（pass）  自我介绍&#43;毕业时间&#43;印象最深的项目&#43;项目细节盘问 算法题：螺旋打印矩阵中的元素  三面（pass）  自我介绍&#43;项目介绍（这一面盘把所有实习经历都盘问了一遍，要求讲自己一天的工作流程，举一个开发例子，尽可能细节）  HR面（pass）  最有成就感的事情 实习经历最大的收获 实习期间遇到的困难怎么解决  知乎golang后端开发 一面(pass)  少量的key值要在后端进行过滤，如何设计才能保证后端数据库不被不存在的key攻击？ 少量的key值要进行redis存储，用什么数据结构？ 大量的key在后端存储，如何设计才能不被攻击？（bitmap，布隆过滤器） mysql索引机制，为什么使用B&#43;树进行存储？为什么不用二叉树，为什么不用B树 为什么使用自增id作为主键 mysql事务的隔离级别有哪些？分别解决了什么问题 python 的super机制，装饰器 对HTTP无状态怎么理解的，Cookie机制的流程，服务器怎么存储cookie的 负载均衡的场景，怎么应对一台机器上保存了cookie而请求被转发到其他的机器上（请求固定转发，负载均衡端保存全局cookie） 大量用户id和电话号码，一个频繁请求的场景，如何设计索引（电话号&#43;uid组合索引，覆盖索引机制） 操作系统，IO多路复用，对select/epoll的理解 算法题：打印二叉树每层最小的节点值  百度&ndash;go后端开发 一面（fail）  url输入到展现过程？ mysql题目：给定一个表统计pv、uv shell题目：统计文件中出现次数最多的10个ip 进程和线程的区别，堆栈的区别 算法题：快速排序  百度&ndash;搜索平台研发部go后端开发 一面（pass）  mysql最左原则是什么、事务介绍，ACID四个特性分别怎么实现（越详细越好） 介绍一下mysql的锁机制 给定一个学生选课表，统计每个学生的选课门数，写一个sql语句 TCP怎么保持稳定性，TCP拥塞控制算法介绍（越详细越好），close_wait数量太多怎么解决 怎么通过命令查询进程监听的端口号 select/epoll模型的理解 哈希表如何处理冲突，红黑树了解到什么程度 介绍一下常用排序算法以及应用场景 TopK问题怎么解决 算法题：leetcode电话号码的字母组合  二面(pass) bilibili&ndash;流媒体算法工程师 一面（pass）  对机器学习算法了解到什么程度，过往的算法项目做到什么程度 算法题：  最长上升子序列（贪心&#43;二分查找） 用栈实现队列   TCP和UDP的区别，TCP可靠性是怎么实现的，为什么UDP不可靠 如果想要UDP也可靠的话应该怎么实现 进程和线程的区别、进程之间的通信方式 常用的数据结构了解哪些 智力题  128个队伍进行淘汰赛，总共需要两两进行多少场比赛 3L和5L的桶，装出4L的水如何操作    二面() 好未来—服务端go开发工程师 一面（pass）  mysql分库分表了解吗，当时的公司的mysql库的架构是什么 mysql事务的ACID四个特性怎么实现的，mysql的redolog是什么，有什么作用 mysql的MVCC是怎么实现的 mysql有哪些隔离级别，脏读不可重复读幻读分别是怎么解决的 mysql的锁有哪些，什么是next-key lock，怎么加读写锁（语法层面） mysql聚簇索引和非聚簇索引，为什么mysql用B&#43;树，为什么不用哈希表和二叉树 mysql在非聚簇索引上查询数据的过程（回表，多一次磁盘访问操作） 缓存穿透、缓存雪崩怎么解决（这里缓存穿透提出了永久驻留数据，面试官给出了代码层面的解决方案） redis是单线程、单进程、单进程多线程还是多进程多线程？为什么是单线程设计？还有没有其他的线程/进程了？ redis rdb日志创建过程，什么是写时复制，为什么要fork子进程，为什么不fork子线程 创建rdb日志的时候如果fork子进程，会存在数据冲突吗（操作系统层面解决了这个问题） 小内存大数据文件怎么排序，小内存大数据文件TopK问题（最小堆） 算法题：实现堆的插入操作  二面（pass） 3道系统设计题"/>
+
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="J.Q.HUO" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">J.Q.HUO</div>
+					
+				</div>
+		</a>
+	</div>
+		<div class="divider"></div>
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">我的2022秋招</h1>
+			<div class="post__meta meta"><div class="meta__item-author meta__item">
+	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">J.Q.HUO</span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-08-17T22:30:37&#43;01:00">2021-08-17</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E7%A7%8B%E6%8B%9B/" rel="category">秋招</a>
+	</span>
+</div></div>
+		</header>
+		<figure class="post__thumbnail">
+			<img src="/img/job_interview.png" alt="我的2022秋招">
+		</figure>
+<div class="post__toc toc">
+	<div class="toc__title">Page content</div>
+	<div class="toc__menu">
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#字节跳动国际化电商后端">字节跳动—国际化电商后端</a>
+      <ul>
+        <li><a href="#一面pass">一面（pass）</a></li>
+        <li><a href="#二面fail">二面（fail）</a></li>
+      </ul>
+    </li>
+    <li><a href="#阿里云智能信息事业部--后端开发">阿里云智能信息事业部&ndash;后端开发</a>
+      <ul>
+        <li><a href="#一面pass-1">一面（pass）</a></li>
+        <li><a href="#二面pass">二面（pass）</a></li>
+      </ul>
+    </li>
+    <li><a href="#滴滴广告业务部go后端开发">滴滴广告业务部go后端开发</a>
+      <ul>
+        <li><a href="#一面pass-2">一面（pass）</a></li>
+        <li><a href="#二面pass-1">二面（pass）</a></li>
+        <li><a href="#三面pass">三面（pass）</a></li>
+        <li><a href="#hr面pass">HR面（pass）</a></li>
+      </ul>
+    </li>
+    <li><a href="#知乎golang后端开发">知乎golang后端开发</a>
+      <ul>
+        <li><a href="#一面pass-3">一面(pass)</a></li>
+      </ul>
+    </li>
+    <li><a href="#百度--go后端开发">百度&ndash;go后端开发</a></li>
+    <li><a href="#一面fail">一面（fail）</a></li>
+    <li><a href="#百度--搜索平台研发部go后端开发">百度&ndash;搜索平台研发部go后端开发</a>
+      <ul>
+        <li><a href="#一面pass-4">一面（pass）</a></li>
+        <li><a href="#二面pass-2">二面(pass)</a></li>
+      </ul>
+    </li>
+    <li><a href="#bilibili--流媒体算法工程师">bilibili&ndash;流媒体算法工程师</a>
+      <ul>
+        <li><a href="#一面pass-5">一面（pass）</a></li>
+        <li><a href="#二面">二面()</a></li>
+      </ul>
+    </li>
+    <li><a href="#好未来服务端go开发工程师">好未来—服务端go开发工程师</a>
+      <ul>
+        <li><a href="#一面pass-6">一面（pass）</a></li>
+        <li><a href="#二面pass-3">二面（pass）</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+	</div>
+</div><div class="content post__content clearfix">
+			<p>对于我而言，我的秋招过程就是一个不断经历失败，同时也不断突破自我的过程。很庆幸，不论是出于兴趣，还是盲目跟风，我最终选择了走CS这条路，这是一个需要和计算机进行沟通，更需要和自己进行沟通的领域。也希望自己在这趟旅程中尽可能说服自己，求一个念头通达，圆融如意。</p>
+<hr>
+<p>让我们回到现实<br>
+截至目前，总共经历16场面试，面试通过14场，失败2场。以下是目前我面过的公司的面经，由于个人项目的部分因人而异，这里只列出普适性的问题</p>
+<h2 id="字节跳动国际化电商后端">字节跳动—国际化电商后端</h2>
+<h3 id="一面pass">一面（pass）</h3>
+<ul>
+<li>详细解释一下mysql事务ACID特性？</li>
+<li>mysql怎么实现持久化的？数据库宕机怎么进行数据恢复？</li>
+<li>什么是mysql的MVCC？MVCC怎么实现的？</li>
+<li>详细讲一下TCP4次挥手，3次握手？为什么要4次挥手？</li>
+<li>客户端断开连接的过程</li>
+<li>用过哪些shell命令？题目：如何统计访问日志的“99”线，写命令实现</li>
+<li>进程和线程的区别？如果一个进程中的线程过多会出现什么情况</li>
+<li>进程和线程的上下文切换对比</li>
+<li><code>算法题</code>：给定一个链表，奇数位升序排列，偶数位降序排列，要求输出一个全局升序排列的链表</li>
+</ul>
+<h3 id="二面fail">二面（fail）</h3>
+<ul>
+<li>HTTP和HTTPS的区别，什么是对称加密和非对称加密</li>
+<li>对称加密和非对称加密有什么优缺点，分别应用在什么场景</li>
+<li>mysql有哪些锁，意向锁有什么作用</li>
+<li>mysql事务有哪些隔离级别，分别解决了什么现象</li>
+<li>redis缓存机制，什么是缓存雪崩、缓存穿透、缓存击穿，分别怎么解决</li>
+<li><code>算法题</code>：输出最小字典序的最长递增子序列</li>
+</ul>
+<h2 id="阿里云智能信息事业部--后端开发">阿里云智能信息事业部&ndash;后端开发</h2>
+<h3 id="一面pass-1">一面（pass）</h3>
+<ul>
+<li>用户从url输入到后端返回经历哪些过程（主要考察后端架构的理解）？</li>
+<li>分发逻辑怎么实现的？看没看过源码？能怎么改进？主要难题是什么？</li>
+<li>mysql主从架构</li>
+<li>mysql有哪些引擎，innodb的新特性</li>
+<li>mysql的事务特性，mysql的redolog的作用</li>
+<li>mysql锁机制，讲的越详细越好</li>
+<li>什么是回表？</li>
+<li>用过哪些shell命令？sed和awk用过吗？</li>
+<li>听说过nosql吗？有没有用过离线分析的数据库？</li>
+<li><code>算法题</code></li>
+<li>
+<ul>
+<li>反转链表</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>求数据流中第K大的元素</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>给定范围0&lt;a&lt;10^18的整数，求不包含0-9某个数字且小于a的数字个数</li>
+</ul>
+</li>
+</ul>
+<h3 id="二面pass">二面（pass）</h3>
+<ul>
+<li>你理解的后端和算法的区别是什么</li>
+<li>自己的职业规划？</li>
+<li>redis怎么保证缓存和数据库的一致性</li>
+<li>mysql 慢查询怎么优化？</li>
+<li>联合索引(A,B,C)索引的顺序影响mysql的性能吗</li>
+<li>1亿的数据量放在线上mysql库中可能出现的问题是什么？怎么解决？（分库分表）</li>
+</ul>
+<h2 id="滴滴广告业务部go后端开发">滴滴广告业务部go后端开发</h2>
+<h3 id="一面pass-2">一面（pass）</h3>
+<ul>
+<li>100个进程同时执行update t set k = k+1 where id = 1 会发生什么情况（回答了写锁等待，然后被追问依据是什么，回答了update当前读机制如果没有锁等待会导致数据不一致的问题）</li>
+<li>如果100个请求同时更新呢，在redis中会出现什么情况</li>
+<li>查看cpu占用信息的命令？查看内存占用信息的命令？</li>
+<li><code>算法题</code></li>
+<li>
+<ul>
+<li>求两个字符串数字的差</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>给定一个数组，O(n)时间O(1)空间地将数组中的0元素移动到末尾，并保证数组中元素的相对顺序</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>给定一组硬币面值可重复使用，求出凑齐k元的硬币最小数量</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>两数之和</li>
+</ul>
+</li>
+</ul>
+<h3 id="二面pass-1">二面（pass）</h3>
+<ul>
+<li>自我介绍+毕业时间+印象最深的项目+项目细节盘问</li>
+<li><code>算法题</code>：螺旋打印矩阵中的元素</li>
+</ul>
+<h3 id="三面pass">三面（pass）</h3>
+<ul>
+<li>自我介绍+项目介绍（这一面盘把所有实习经历都盘问了一遍，要求讲自己一天的工作流程，举一个开发例子，尽可能细节）</li>
+</ul>
+<h3 id="hr面pass">HR面（pass）</h3>
+<ul>
+<li>最有成就感的事情</li>
+<li>实习经历最大的收获</li>
+<li>实习期间遇到的困难怎么解决</li>
+</ul>
+<h2 id="知乎golang后端开发">知乎golang后端开发</h2>
+<h3 id="一面pass-3">一面(pass)</h3>
+<ul>
+<li>少量的key值要在后端进行过滤，如何设计才能保证后端数据库不被不存在的key攻击？</li>
+<li>少量的key值要进行redis存储，用什么数据结构？</li>
+<li>大量的key在后端存储，如何设计才能不被攻击？（bitmap，布隆过滤器）</li>
+<li>mysql索引机制，为什么使用B+树进行存储？为什么不用二叉树，为什么不用B树</li>
+<li>为什么使用自增id作为主键</li>
+<li>mysql事务的隔离级别有哪些？分别解决了什么问题</li>
+<li>python 的super机制，装饰器</li>
+<li>对HTTP无状态怎么理解的，Cookie机制的流程，服务器怎么存储cookie的</li>
+<li>负载均衡的场景，怎么应对一台机器上保存了cookie而请求被转发到其他的机器上（请求固定转发，负载均衡端保存全局cookie）</li>
+<li>大量用户id和电话号码，一个频繁请求的场景，如何设计索引（电话号+uid组合索引，覆盖索引机制）</li>
+<li>操作系统，IO多路复用，对select/epoll的理解</li>
+<li><code>算法题</code>：打印二叉树每层最小的节点值</li>
+</ul>
+<h2 id="百度--go后端开发">百度&ndash;go后端开发</h2>
+<h2 id="一面fail">一面（fail）</h2>
+<ul>
+<li>url输入到展现过程？</li>
+<li>mysql题目：给定一个表统计pv、uv</li>
+<li>shell题目：统计文件中出现次数最多的10个ip</li>
+<li>进程和线程的区别，堆栈的区别</li>
+<li><code>算法题</code>：快速排序</li>
+</ul>
+<h2 id="百度--搜索平台研发部go后端开发">百度&ndash;搜索平台研发部go后端开发</h2>
+<h3 id="一面pass-4">一面（pass）</h3>
+<ul>
+<li>mysql最左原则是什么、事务介绍，ACID四个特性分别怎么实现（越详细越好）</li>
+<li>介绍一下mysql的锁机制</li>
+<li>给定一个学生选课表，统计每个学生的选课门数，写一个sql语句</li>
+<li>TCP怎么保持稳定性，TCP拥塞控制算法介绍（越详细越好），close_wait数量太多怎么解决</li>
+<li>怎么通过命令查询进程监听的端口号</li>
+<li>select/epoll模型的理解</li>
+<li>哈希表如何处理冲突，红黑树了解到什么程度</li>
+<li>介绍一下常用排序算法以及应用场景</li>
+<li>TopK问题怎么解决</li>
+<li><code>算法题</code>：leetcode电话号码的字母组合</li>
+</ul>
+<h3 id="二面pass-2">二面(pass)</h3>
+<h2 id="bilibili--流媒体算法工程师">bilibili&ndash;流媒体算法工程师</h2>
+<h3 id="一面pass-5">一面（pass）</h3>
+<ul>
+<li>对机器学习算法了解到什么程度，过往的算法项目做到什么程度</li>
+<li><code>算法题</code>：
+<ul>
+<li>最长上升子序列（贪心+二分查找）</li>
+<li>用栈实现队列</li>
+</ul>
+</li>
+<li>TCP和UDP的区别，TCP可靠性是怎么实现的，为什么UDP不可靠</li>
+<li>如果想要UDP也可靠的话应该怎么实现</li>
+<li>进程和线程的区别、进程之间的通信方式</li>
+<li>常用的数据结构了解哪些</li>
+<li><code>智力题</code>
+<ul>
+<li>128个队伍进行淘汰赛，总共需要两两进行多少场比赛</li>
+<li>3L和5L的桶，装出4L的水如何操作</li>
+</ul>
+</li>
+</ul>
+<h3 id="二面">二面()</h3>
+<h2 id="好未来服务端go开发工程师">好未来—服务端go开发工程师</h2>
+<h3 id="一面pass-6">一面（pass）</h3>
+<ul>
+<li>mysql分库分表了解吗，当时的公司的mysql库的架构是什么</li>
+<li>mysql事务的ACID四个特性怎么实现的，mysql的redolog是什么，有什么作用</li>
+<li>mysql的MVCC是怎么实现的</li>
+<li>mysql有哪些隔离级别，脏读不可重复读幻读分别是怎么解决的</li>
+<li>mysql的锁有哪些，什么是next-key lock，怎么加读写锁（语法层面）</li>
+<li>mysql聚簇索引和非聚簇索引，为什么mysql用B+树，为什么不用哈希表和二叉树</li>
+<li>mysql在非聚簇索引上查询数据的过程（回表，多一次磁盘访问操作）</li>
+<li>缓存穿透、缓存雪崩怎么解决（这里缓存穿透提出了永久驻留数据，面试官给出了代码层面的解决方案）</li>
+<li>redis是单线程、单进程、单进程多线程还是多进程多线程？为什么是单线程设计？还有没有其他的线程/进程了？</li>
+<li>redis rdb日志创建过程，什么是写时复制，为什么要fork子进程，为什么不fork子线程</li>
+<li>创建rdb日志的时候如果fork子进程，会存在数据冲突吗（操作系统层面解决了这个问题）</li>
+<li>小内存大数据文件怎么排序，小内存大数据文件TopK问题（最小堆）</li>
+<li><code>算法题</code>：实现堆的插入操作</li>
+</ul>
+<h3 id="二面pass-3">二面（pass）</h3>
+<p>3道系统设计题</p>
+<ul>
+<li>
+<p>给定一个数据表，字段分别是uid，签到状态（可选项为“签入”，“签出”），签到时间<br>
+<code>场景</code>：该数据表描述的是一个体育馆内一天内市民签入签出的信息<br>
+<code>需求</code>：统计特定的一个时间点内，体育馆内有多少人</p>
+<ul>
+<li>问题1: 你会怎么实现该需求？
+<ul>
+<li>实现1:使用sql语句计算要统计的时间点之前签入的人数p1，签出的人数p2，然后计算p1-p2的值（缺点：每次统计都需要扫描一遍数据库表，时间复杂度较大）</li>
+<li>实现2:新建一个字段为，当前时间点体育馆内的总人数；每次用户签入的时候将该字段+1，签出的时候将该字段-1（缺点，新建立的字段只能解决当前的需求，可扩展性不强）</li>
+<li>实现3:将实现2稍微进行一下修改，新建2个字段，分别为当前时间点签入了多少人，签出了多少人，这样实现该需求的时候只需要计算两个字段的差值即可，同时这样的设计也能实现需求“统计特定时间点内体育馆签入了多少人，签出了多少人”</li>
+</ul>
+</li>
+<li>问题2:针对上述的设计3，可能存在的问题是什么？
+<ul>
+<li>如果此时只有一张数据表，如果此时是高并发的场景，有大量请求同时在这张数据表中进行签入签出字段的修改，此时会造成大量写锁等待现象<br>
+<code>解决方案</code>：使用一个消息队列中间件，在消息队列放在mysql数据库的前端，这样每个写请求可以把数据放在消息队列中，然后修改的时候进行队列的读操作即可（问题：如果在高并发的场景下也有需求统计当前体育馆内剩余多少人，会不会存在数据错误的问题，因为消息队列中缓存了大量的未消费的数据）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>给定1G的内存，10G的大文件，文件中保存着大量的用户名，可能存在重复，怎样输出一个去重的文件？</p>
+<ul>
+<li>实现1:将10G的文件分割成20个500M的小文件，然后在1G的内存中500M存放哈希表，500M存放数据文件，然后进行去重操作，输出一个必定小于500M的文件；上述操作进行多轮，最终剩下的一个小于1G的数据文件输出即可（问题：该方案只适用于存在大量重复的用户名的场景）</li>
+<li>问题2: 如果用户名只有少量重复，该如何进行去重？</li>
+</ul>
+</li>
+<li>
+<p>某平台有100w个用户在进行实时对战游戏，每个用户有对应的积分，请设计一个实时排行榜要求更快地求出用户的排名</p>
+</li>
+</ul>
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/%E5%90%8E%E7%AB%AF%E6%B1%82%E8%81%8C%E9%9D%A2%E8%AF%95/" rel="tag">后端求职面试</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<figure class="authorbox__avatar">
+		<img alt="J.Q.HUO avatar" src="/img/avatar.png" class="avatar" height="90" width="90">
+	</figure>
+	<div class="authorbox__header">
+		<span class="authorbox__name">About J.Q.HUO</span>
+	</div>
+	<div class="authorbox__description">
+		KCL在读Master，主业歌手副业码农
+	</div>
+</div>
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/post/digitdp/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">对数位dp的理解</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2021 params.copyright.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>

@@ -13,10 +13,10 @@
     
     <item>
       <title>字符编码</title>
-      <link>https://tgreenvand.github.io/post/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%98%AF%E5%A6%82%E4%BD%95%E5%AD%98%E5%82%A8%E7%9A%84/</link>
+      <link>https://tgreenvand.github.io/post/how_to_store_string_in_computer/</link>
       <pubDate>Mon, 09 Aug 2021 20:40:21 +0100</pubDate>
       
-      <guid>https://tgreenvand.github.io/post/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%98%AF%E5%A6%82%E4%BD%95%E5%AD%98%E5%82%A8%E7%9A%84/</guid>
+      <guid>https://tgreenvand.github.io/post/how_to_store_string_in_computer/</guid>
       <description>字符编码指的是对每一个独一无二的字符赋予一个数字，然后将这个数字转换成计算机二进制补码的方式存储，这样计算机就可以识别每个字符了。
 目前耳熟能详的对字符进行编码的方法有ASCII、Unicode和UTF-8，本文主要介绍这三种编码方式的区别以及演化
 字符编码的演化 总的来说，ASCII（发音为&amp;quot;askey&amp;rdquo;）编码方式用7位二进制数编码了128个字符，最高位统一规定为0. ASCII编码主要面对的是大小写英文字母，数字0-9，各种标点符号以及一些特殊字符。

@@ -6,10 +6,19 @@
     <description>Recent content in Categories on J.Q.HUO</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 14 Aug 2021 22:48:50 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 17 Aug 2021 22:30:37 +0100</lastBuildDate>
     
 	<atom:link href="https://tgreenvand.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>秋招</title>
+      <link>https://tgreenvand.github.io/categories/%E7%A7%8B%E6%8B%9B/</link>
+      <pubDate>Tue, 17 Aug 2021 22:30:37 +0100</pubDate>
+      
+      <guid>https://tgreenvand.github.io/categories/%E7%A7%8B%E6%8B%9B/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>算法刷题</title>
