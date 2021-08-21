@@ -72,12 +72,14 @@
       <ul>
         <li><a href="#一面pass">一面（pass）</a></li>
         <li><a href="#二面fail">二面（fail）</a></li>
+        <li><a href="#交叉一面fail">交叉一面（fail）</a></li>
       </ul>
     </li>
     <li><a href="#阿里云智能信息事业部--后端开发">阿里云智能信息事业部&ndash;后端开发</a>
       <ul>
         <li><a href="#一面pass-1">一面（pass）</a></li>
         <li><a href="#二面pass">二面（pass）</a></li>
+        <li><a href="#hr面">hr面（）</a></li>
       </ul>
     </li>
     <li><a href="#滴滴广告业务部go后端开发">滴滴广告业务部go后端开发</a>
@@ -97,20 +99,27 @@
     <li><a href="#一面fail">一面（fail）</a></li>
     <li><a href="#百度--搜索平台研发部go后端开发">百度&ndash;搜索平台研发部go后端开发</a>
       <ul>
-        <li><a href="#一面pass-4">一面（pass）</a></li>
-        <li><a href="#二面pass-2">二面(pass)</a></li>
+        <li><a href="#一面pass--技术中台方向">一面（pass）&ndash;技术中台方向</a></li>
+        <li><a href="#二面pass---技术中台方向">二面(pass) &ndash;技术中台方向</a></li>
+        <li><a href="#二轮一面pass--垂搜方向">二轮一面（pass）&ndash;垂搜方向</a></li>
+        <li><a href="#二轮二面--垂搜方向">二轮二面（）&ndash;垂搜方向</a></li>
       </ul>
     </li>
     <li><a href="#bilibili--流媒体算法工程师">bilibili&ndash;流媒体算法工程师</a>
       <ul>
-        <li><a href="#一面pass-5">一面（pass）</a></li>
-        <li><a href="#二面">二面()</a></li>
+        <li><a href="#一面pass-4">一面（pass）</a></li>
+        <li><a href="#二面fail-1">二面(fail)</a></li>
       </ul>
     </li>
     <li><a href="#好未来服务端go开发工程师">好未来—服务端go开发工程师</a>
       <ul>
+        <li><a href="#一面pass-5">一面（pass）</a></li>
+        <li><a href="#二面pass-2">二面（pass）</a></li>
+      </ul>
+    </li>
+    <li><a href="#腾讯技术中台--大数据平台">腾讯技术中台&ndash;大数据平台</a>
+      <ul>
         <li><a href="#一面pass-6">一面（pass）</a></li>
-        <li><a href="#二面pass-3">二面（pass）</a></li>
       </ul>
     </li>
   </ul>
@@ -143,6 +152,18 @@
 <li>redis缓存机制，什么是缓存雪崩、缓存穿透、缓存击穿，分别怎么解决</li>
 <li><code>算法题</code>：输出最小字典序的最长递增子序列</li>
 </ul>
+<p>面试挂掉后，被另一个部门面试官捞起又安排了一轮新面试，同样挂掉了（我不配去字节TAT）</p>
+<h3 id="交叉一面fail">交叉一面（fail）</h3>
+<ul>
+<li>TCP断开连接为什么有TIME_WAIT状态</li>
+<li>mysql的MVCC怎么实现</li>
+<li>redis有哪些数据结构，<!-- raw HTML omitted -->zset底层怎么实现<!-- raw HTML omitted --></li>
+<li>算法题：
+<ul>
+<li>给定一个数组，前半部分严格升序，后半部分严格降序，要求用O(1)空间复杂度求出数组中重复的元素（双指针）</li>
+</ul>
+</li>
+</ul>
 <h2 id="阿里云智能信息事业部--后端开发">阿里云智能信息事业部&ndash;后端开发</h2>
 <h3 id="一面pass-1">一面（pass）</h3>
 <ul>
@@ -155,19 +176,10 @@
 <li>什么是回表？</li>
 <li>用过哪些shell命令？sed和awk用过吗？</li>
 <li>听说过nosql吗？有没有用过离线分析的数据库？</li>
-<li><code>算法题</code></li>
-<li>
+<li><code>算法题</code>
 <ul>
 <li>反转链表</li>
-</ul>
-</li>
-<li>
-<ul>
 <li>求数据流中第K大的元素</li>
-</ul>
-</li>
-<li>
-<ul>
 <li>给定范围0&lt;a&lt;10^18的整数，求不包含0-9某个数字且小于a的数字个数</li>
 </ul>
 </li>
@@ -181,12 +193,17 @@
 <li>联合索引(A,B,C)索引的顺序影响mysql的性能吗</li>
 <li>1亿的数据量放在线上mysql库中可能出现的问题是什么？怎么解决？（分库分表）</li>
 </ul>
+<h3 id="hr面">hr面（）</h3>
+<p>这个hr并没有很多问题要问我</p>
+<ul>
+<li>留学期间印象最深刻的两件事、国内外授课模式有什么不同</li>
+</ul>
 <h2 id="滴滴广告业务部go后端开发">滴滴广告业务部go后端开发</h2>
 <h3 id="一面pass-2">一面（pass）</h3>
 <ul>
 <li>100个进程同时执行update t set k = k+1 where id = 1 会发生什么情况（回答了写锁等待，然后被追问依据是什么，回答了update当前读机制如果没有锁等待会导致数据不一致的问题）</li>
 <li>如果100个请求同时更新呢，在redis中会出现什么情况</li>
-<li>查看cpu占用信息的命令？查看内存占用信息的命令？</li>
+<li>查看cpu占用信息的命令，查看内存占用信息的命令</li>
 <li><code>算法题</code>
 <ul>
 <li>求两个字符串数字的差</li>
@@ -214,9 +231,9 @@
 <h2 id="知乎golang后端开发">知乎golang后端开发</h2>
 <h3 id="一面pass-3">一面(pass)</h3>
 <ul>
-<li>少量的key值要在后端进行过滤，如何设计才能保证后端数据库不被不存在的key攻击？</li>
-<li>少量的key值要进行redis存储，用什么数据结构？</li>
-<li>大量的key在后端存储，如何设计才能不被攻击？（bitmap，布隆过滤器）</li>
+<li>少量的key值要在后端进行过滤，如何设计才能保证后端数据库不被不存在的key攻击</li>
+<li>少量的key值要进行redis存储，用什么数据结构</li>
+<li>大量的key在后端存储，如何设计才能不被攻？（bitmap，布隆过滤器）</li>
 <li>mysql索引机制，为什么使用B+树进行存储？为什么不用二叉树，为什么不用B树</li>
 <li>为什么使用自增id作为主键</li>
 <li>mysql事务的隔离级别有哪些？分别解决了什么问题</li>
@@ -237,7 +254,7 @@
 <li><code>算法题</code>：快速排序</li>
 </ul>
 <h2 id="百度--搜索平台研发部go后端开发">百度&ndash;搜索平台研发部go后端开发</h2>
-<h3 id="一面pass-4">一面（pass）</h3>
+<h3 id="一面pass--技术中台方向">一面（pass）&ndash;技术中台方向</h3>
 <ul>
 <li>mysql最左原则是什么、事务介绍，ACID四个特性分别怎么实现（越详细越好）</li>
 <li>介绍一下mysql的锁机制</li>
@@ -250,9 +267,43 @@
 <li>TopK问题怎么解决</li>
 <li><code>算法题</code>：leetcode电话号码的字母组合</li>
 </ul>
-<h3 id="二面pass-2">二面(pass)</h3>
+<h3 id="二面pass---技术中台方向">二面(pass) &ndash;技术中台方向</h3>
+<ul>
+<li>mysql的事务、索引、锁的详细介绍</li>
+<li>一张学生选课表，包含学生id、所选课程id、课程分数，要求仅用一个sql语句统计出个各个课程排名前3的学生id（窗口函数的考察）</li>
+<li><code>算法题</code>
+<ul>
+<li>二叉树的层序遍历</li>
+<li>将输入数组分割成两部分，使得两个子数组的和具有最小差，输出这个最小差（思路：leetcode分割等和子集）</li>
+</ul>
+</li>
+</ul>
+<p>二面通过后，得知面试的部门已经没有hc了（实惨），简历被其他的部门捞了起来，于是就有了下面的“二轮面试”</p>
+<h3 id="二轮一面pass--垂搜方向">二轮一面（pass）&ndash;垂搜方向</h3>
+<ul>
+<li>实习经历深入考察，这里问了我几个之前实习部门的后端架构问题，确实比较深入，没有回答上来</li>
+<li>讲一下php和python有什么区别</li>
+<li>mysql索引用什么数据结构实现，还能不能用其他的数据结构</li>
+<li>mysql中有没有用到哈希表作为索引（自适应哈希索引），什么场景下会用到</li>
+<li>什么是mysql的事务，隔离级别有哪些，分别解决了什么问题</li>
+<li>使用主键索引和非主键索引在查询数据的过程的区别</li>
+<li><!-- raw HTML omitted -->sql注入问题<!-- raw HTML omitted --></li>
+<li>redis有哪些数据结构</li>
+<li><!-- raw HTML omitted -->redis怎么实现分布式锁<!-- raw HTML omitted --></li>
+<li>表单提交的去重和幂等问题，如何去实现幂等</li>
+<li>cookie和session的区别，什么时候会用到cookie和session，session一般存放在哪里</li>
+<li>说一下你熟悉的shell命令（考察了netstat、ps、grep）</li>
+<li>讲一下用git做版本管理一般都有哪些步骤</li>
+<li>算法题：二分查找模版题</li>
+<li>面试问答环节：
+<ul>
+<li>这里面试官跟我介绍了大量的部门业务，目前的工作以及未来的工作；和我介绍了要怎么去学习后端，学习过程中的侧重点等等，受益匪浅</li>
+</ul>
+</li>
+</ul>
+<h3 id="二轮二面--垂搜方向">二轮二面（）&ndash;垂搜方向</h3>
 <h2 id="bilibili--流媒体算法工程师">bilibili&ndash;流媒体算法工程师</h2>
-<h3 id="一面pass-5">一面（pass）</h3>
+<h3 id="一面pass-4">一面（pass）</h3>
 <ul>
 <li>对机器学习算法了解到什么程度，过往的算法项目做到什么程度</li>
 <li><code>算法题</code>：
@@ -272,9 +323,17 @@
 </ul>
 </li>
 </ul>
-<h3 id="二面">二面()</h3>
+<h3 id="二面fail-1">二面(fail)</h3>
+<ul>
+<li>这一面只有20分钟，估计看我技术栈不是算法方向的就打算拒绝我了，面试的问题是一些软问题，比如“平时如何学习一门新技术”、“学习过程中遇到的最印象深刻的事情”；</li>
+<li>面试结束问答：
+<ul>
+<li>面试官推荐在学习新技术的时候多去看一些first-hand的内容，比如源代码或者是开发者写的一些东西，遇到不懂的知识先仔细思考，实在不明白的话请教别人</li>
+</ul>
+</li>
+</ul>
 <h2 id="好未来服务端go开发工程师">好未来—服务端go开发工程师</h2>
-<h3 id="一面pass-6">一面（pass）</h3>
+<h3 id="一面pass-5">一面（pass）</h3>
 <ul>
 <li>mysql分库分表了解吗，当时的公司的mysql库的架构是什么</li>
 <li>mysql事务的ACID四个特性怎么实现的，mysql的redolog是什么，有什么作用</li>
@@ -290,7 +349,7 @@
 <li>小内存大数据文件怎么排序，小内存大数据文件TopK问题（最小堆）</li>
 <li><code>算法题</code>：实现堆的插入操作</li>
 </ul>
-<h3 id="二面pass-3">二面（pass）</h3>
+<h3 id="二面pass-2">二面（pass）</h3>
 <p>3道系统设计题</p>
 <ul>
 <li>
@@ -323,6 +382,12 @@
 <li>
 <p>某平台有100w个用户在进行实时对战游戏，每个用户有对应的积分，请设计一个实时排行榜要求更快地求出用户的排名</p>
 </li>
+</ul>
+<h2 id="腾讯技术中台--大数据平台">腾讯技术中台&ndash;大数据平台</h2>
+<h3 id="一面pass-6">一面（pass）</h3>
+<ul>
+<li>mysql事务、索引、锁介绍</li>
+<li>3道mysql语句书写题（分别考察子查询、join连接查询、窗口函数应用）</li>
 </ul>
 		</div>
 		<footer class="post__footer">
