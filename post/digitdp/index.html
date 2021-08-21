@@ -29,31 +29,6 @@ class Solution: def __init__(self): # 初始化n的上界数组a # 初始化记�
 <meta property="article:published_time" content="2021-08-14T22:48:50+01:00" />
 <meta property="article:modified_time" content="2021-08-14T22:48:50+01:00" />
 
-		<meta itemprop="name" content="对数位dp的理解">
-<meta itemprop="description" content="我开始做数位dp相关习题的最主要原因就是被7.30阿里笔试第一题虐到了&hellip;当时答完题直接自闭，第一题都没做出来，然后上牛客看一个的解法说是数位dp，之后一查居然是算法竞赛才会研究的专题orz&hellip;不管怎么说最近的一段研究也算是让我摆脱了“大区间内满足条件的数字个数查找”类型的题目无从下手的尴尬处境，接下来就谈谈我对这类题目以及数位dp的看法
-什么是数位dp 简单来说是对给定的一个相对大的数n，将n的从高到低位用一个数组保存，然后通过分析n的各个数位之间的依赖关系（通常是题目的约束条件，比如相邻两个数字之差啥的）进行动态规划的一个过程（这里用记忆化dfs实现比较好理解）
-数位dp可以用来解决大区间内满足条件的数的个数查找类问题，让我们通过以下题目来对数位dp进行一个感性的认知：
- leetcode 233 数字1的个数
-给定一个整数n，计算所有小于等于n的非负整数中数字1出现的个数，其中1&lt;=n&lt;=10^8
-  leetcode 1067 范围内的数字计数
-给定一个在 0到 9 之间的整数 d，和两个正整数 low 和 high 分别作为上下界。返回 d在 low 和 high 之间的整数中出现的次数，包括边界 low 和 high
-  leetcode 600 不含连续1的非负整数个数
-给定一个正整数 n，找出小于或等于 n 的非负整数中，其二进制表示不包含 连续的1的个数。
-  leetcode 902 最大为N的数字组合
-我们有一组排序的数字 D，它是 {&#39;1&#39;,&#39;2&#39;,&#39;3&#39;,&#39;4&#39;,&#39;5&#39;,&#39;6&#39;,&#39;7&#39;,&#39;8&#39;,&#39;9&#39;} 的非空子集。（请注意，&lsquo;0&rsquo; 不包括在内。）
-现在，我们用这些数字进行组合写数字，想用多少次就用多少次。例如 D = {&#39;1&#39;,&#39;3&#39;,&#39;5&#39;}，我们可以写出像 &#39;13&#39;, &#39;551&#39;, &#39;1351315&#39; 这样的数字。
-返回可以用 D 中的数字写出的小于或等于 N 的正整数的数目
- 代码模版以及分析过程 我会结合代码模版来对数位dp问题进行一轮分析
-python代码模版如下（以leetcode 233为例）：
-class Solution: def __init__(self): # 初始化n的上界数组a # 初始化记忆化数组dp，通常dp的大小需要通过分析题目来得出 self.">
-<meta itemprop="datePublished" content="2021-08-14T22:48:50+01:00" />
-<meta itemprop="dateModified" content="2021-08-14T22:48:50+01:00" />
-<meta itemprop="wordCount" content="183">
-
-
-
-<meta itemprop="keywords" content="动态规划,记忆化dfs," />
-
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="对数位dp的理解"/>
 <meta name="twitter:description" content="我开始做数位dp相关习题的最主要原因就是被7.30阿里笔试第一题虐到了&hellip;当时答完题直接自闭，第一题都没做出来，然后上牛客看一个的解法说是数位dp，之后一查居然是算法竞赛才会研究的专题orz&hellip;不管怎么说最近的一段研究也算是让我摆脱了“大区间内满足条件的数字个数查找”类型的题目无从下手的尴尬处境，接下来就谈谈我对这类题目以及数位dp的看法
@@ -114,23 +89,7 @@ class Solution: def __init__(self): # 初始化n的上界数组a # 初始化记�
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-08-14T22:48:50&#43;01:00">2021-08-14</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E7%AE%97%E6%B3%95%E5%88%B7%E9%A2%98/" rel="category">算法刷题</a>
 	</span>
 </div></div>
-		</header>
-<div class="post__toc toc">
-	<div class="toc__title">Page content</div>
-	<div class="toc__menu">
-		<nav id="TableOfContents">
-  <ul>
-    <li><a href="#什么是数位dp">什么是数位dp</a></li>
-    <li><a href="#代码模版以及分析过程">代码模版以及分析过程</a>
-      <ul>
-        <li><a href="#dfs函数的设计">dfs函数的设计</a></li>
-        <li><a href="#前导0的影响">前导0的影响</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-	</div>
-</div><div class="content post__content clearfix">
+		</header><div class="content post__content clearfix">
 			<p>我开始做数位dp相关习题的最主要原因就是被7.30阿里笔试第一题虐到了&hellip;当时答完题直接自闭，第一题都没做出来，然后上牛客看一个的解法说是数位dp，之后一查居然是算法竞赛才会研究的专题orz&hellip;不管怎么说最近的一段研究也算是让我摆脱了“大区间内满足条件的数字个数查找”类型的题目无从下手的尴尬处境，接下来就谈谈我对这类题目以及数位dp的看法</p>
 <h2 id="什么是数位dp">什么是数位dp</h2>
 <p>简单来说是对给定的一个相对大的数n，将n的从高到低位用一个数组保存，然后通过分析n的各个数位之间的依赖关系（通常是题目的约束条件，比如<!-- raw HTML omitted --><strong>相邻两个数字之差</strong><!-- raw HTML omitted -->啥的）进行动态规划的一个过程（这里用记忆化dfs实现比较好理解）</p>
@@ -244,7 +203,48 @@ python代码模版如下（以leetcode 233为例）：</p>
 
 
 			</div>
-			
+			<aside class="sidebar"><div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
+		<label>
+			<input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="q" aria-label="SEARCH…">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="https://tgreenvand.github.io" />
+	</form>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/jobinterviewin2020/">我的2022秋招</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/digitdp/">对数位dp的理解</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/how_to_store_string_in_computer/">字符编码</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/%E7%A7%8B%E6%8B%9B/">秋招</a></li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/%E7%AE%97%E6%B3%95%E5%88%B7%E9%A2%98/">算法刷题</a></li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">计算机基础知识</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" title="动态规划">动态规划</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E5%90%8E%E7%AB%AF%E6%B1%82%E8%81%8C%E9%9D%A2%E8%AF%95/" title="后端求职面试">后端求职面试</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" title="基础知识">基础知识</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E8%AE%B0%E5%BF%86%E5%8C%96dfs/" title="记忆化dfs">记忆化dfs</a>
+	</div>
+</div>
+</aside>
 		</div>
 		<footer class="footer">
 	<div class="container footer__container flex">
