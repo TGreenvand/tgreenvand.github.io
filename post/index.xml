@@ -6,10 +6,19 @@
     <description>Recent content in Posts on J.Q.HUO</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 17 Aug 2021 22:30:37 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 23 Aug 2021 21:07:31 +0100</lastBuildDate>
     
 	<atom:link href="https://tgreenvand.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Mysql_window_functions</title>
+      <link>https://tgreenvand.github.io/post/mysql_window_functions/</link>
+      <pubDate>Mon, 23 Aug 2021 21:07:31 +0100</pubDate>
+      
+      <guid>https://tgreenvand.github.io/post/mysql_window_functions/</guid>
+      <description>&lt;p&gt;最近接触到了sql语法中的窗口函数（window functions），于是写下该篇文章总结应用窗口函数可以解决哪些经典问题&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>我的2022秋招</title>
