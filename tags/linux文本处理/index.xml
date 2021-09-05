@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux文本处理 on J.Q.HUO</title>
+    <link>https://tgreenvand.github.io/tags/linux%E6%96%87%E6%9C%AC%E5%A4%84%E7%90%86/</link>
+    <description>Recent content in Linux文本处理 on J.Q.HUO</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 31 Aug 2021 19:32:23 +0100</lastBuildDate>
+    
+	<atom:link href="https://tgreenvand.github.io/tags/linux%E6%96%87%E6%9C%AC%E5%A4%84%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Linux 文本处理</title>
+      <link>https://tgreenvand.github.io/post/linux_file_process_command/</link>
+      <pubDate>Tue, 31 Aug 2021 19:32:23 +0100</pubDate>
+      
+      <guid>https://tgreenvand.github.io/post/linux_file_process_command/</guid>
+      <description>&lt;p&gt;本文记录常用的Linux文本处理命令，用于处理工作中的日志文件&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
